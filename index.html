@@ -1,0 +1,3858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIMAL UET</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InppbWFsV2hpdGVHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0ZGRkZGRiIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNGQUZBRkEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0U4RThFOCIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJzaGFkb3ciIHg9Ii0xNSUiIHk9Ii0xNSUiIHdpZHRoPSIxMzAlIiBoZWlnaHQ9IjEzMCUiPgogICAgICA8ZmVEcm9wU2hhZG93IGR4PSIwIiBkeT0iMyIgc3RkRGV2aWF0aW9uPSI0IiBmbG9vZC1jb2xvcj0iIzAwMDAwMCIgZmxvb2Qtb3BhY2l0eT0iMC40Ii8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIiBmaWxsPSJ1cmwoI3ppbWFsV2hpdGVHcmFkKSIgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPCEtLSBUb3AgRmx5aW5nIEJpcmQgLyBQaG9lbml4IEVtYmxlbSAtLT4KICAgIDxwYXRoIGQ9Ik0gMjQ1IDQ1IEMgMjM1IDY1IDIyMCA5MCAyMDUgMTEwIEMgMTkwIDEzMCAxNzAgMTQ4IDE2MiAxNjUgQyAxNTggMTczIDE2MCAxODIgMTcwIDE4MCBDIDE4NSAxNzcgMjA1IDE2MCAyMjUgMTM1IEMgMjEwIDE1NSAxOTggMTc4IDE5NSAxOTAgQyAxOTMgMTk3IDE5NyAyMDAgMjA1IDE5NyBDIDIyNSAxOTAgMjUyIDE2OCAyNzUgMTQyIEMgMjY1IDE2MiAyNTggMTgwIDI1OCAxOTAgQyAyNzUgMTc1IDI5MiAxNTAgMzAwIDEzNSBDIDI5MCAxNDggMjc4IDE2MiAyNzAgMTc1IEMgMjg1IDE1OCAyOTggMTQwIDMwNSAxMjUgQyAyOTUgMTM4IDI4NSAxNDggMjc4IDE1OCBDIDI5MiAxNDIgMzAyIDEyNSAzMDYgMTEyIEMgMjk1IDEyNSAyODUgMTM1IDI3OCAxNDMgQyAyOTAgMTI4IDI5OCAxMTAgMzAwIDk1IEMgMjg4IDExMCAyNzUgMTI1IDI2MiAxMzUgQyAyNjggMTIwIDI3MCAxMDAgMjY1IDgyIEMgMjYwIDY1IDI0OCA1MCAyNDUgNDUgWiIgLz4KICAgIDxwYXRoIGQ9Ik0gMjM1IDg1IEMgMjQyIDc4IDI1MCA4MiAyNTUgOTAgQyAyNjAgMTAwIDI1MCAxMTUgMjM4IDEyNSBDIDI0OCAxMTUgMjU1IDEwMiAyNTIgOTIgQyAyNTAgODUgMjQyIDgyIDIzNSA4NSBaIiAvPgogICAgPCEtLSBCaXJkIEhlYWQgYW5kIEJlYWsgLS0+CiAgICA8cGF0aCBkPSJNIDI2NSA4MiBDIDI3MiA4MCAyODIgODIgMjg4IDg1IEMgMjgyIDg2IDI3NSA4NyAyNzAgODkgQyAyNjggODcgMjY2IDg0IDI2NSA4MiBaIiAvPgoKICAgIDwhLS0gQ2VudGVyIFR5cG9ncmFwaHk6IFpJTUFMIC0tPgogICAgPCEtLSBaIC0tPgogICAgPHBhdGggZD0iTSA1MiAyMTAgSCAxMjIgTCA3MiAyNjIgSCAxMjUgViAyNzAgSCA1MCBMIDEwMCAyMTggSCA1MiBWIDIxMCBaIiAvPgogICAgPCEtLSBJIC0tPgogICAgPHBhdGggZD0iTSAxNTIgMjEwIEggMTc1IFYgMjcwIEggMTUyIFYgMjYyIEggMTYwIFYgMjE4IEggMTUyIFYgMjEwIFoiIC8+CiAgICA8IS0tIE0gLS0+CiAgICA8cGF0aCBkPSJNIDIwMCAyMTAgSCAyMTggTCAyNDUgMjUyIEwgMjcyIDIxMCBIIDI5MCBWIDI3MCBIIDI3NiBWIDIyNiBMIDI1MCAyNjggSCAyNDAgTCAyMTQgMjI2IFYgMjcwIEggMjAwIFYgMjEwIFoiIC8+CiAgICA8IS0tIEEgLS0+CiAgICA8cGF0aCBkPSJNIDMyMiAyNzAgTCAzNTAgMjEwIEggMzY2IEwgMzk0IDI3MCBIIDM3OCBMIDM3MCAyNTIgSCAzNDYgTCAzMzggMjcwIEggMzIyIFogTSAzNTAgMjQyIEggMzY2IEwgMzU4IDIyMiBMIDM1MCAyNDIgWiIgLz4KICAgIDwhLS0gTCAtLT4KICAgIDxwYXRoIGQ9Ik0gNDIwIDIxMCBIIDQzNiBWIDI2MiBIIDQ3MCBWIDI3MCBIIDQyMCBWIDIxMCBaIiAvPgoKICAgIDwhLS0gQm90dG9tIEVtYmxlbTogNSBGYW4gTG90dXMvTGVhZiBQZXRhbHMgLS0+CiAgICA8IS0tIENlbnRlciBWZXJ0aWNhbCBQZXRhbCAoUG9pbnRpbmcgRG93bikgLS0+CiAgICA8cGF0aCBkPSJNIDI1NiAyOTUgQyAyNDAgMzMwIDIzNSAzODAgMjU2IDQ3MCBDIDI3NyAzODAgMjcyIDMzMCAyNTYgMjk1IFoiIC8+CiAgICA8bGluZSB4MT0iMjU2IiB5MT0iMjk1IiB4Mj0iMjU2IiB5Mj0iNDY1IiBzdHJva2U9IiM3Nzc3NzciIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC42IiAvPgoKICAgIDwhLS0gSW5uZXIgTGVmdCBQZXRhbCAtLT4KICAgIDxwYXRoIGQ9Ik0gMjUwIDI5NyBDIDIyMCAzMjAgMTg1IDM2NSAxOTAgNDQwIEMgMjI1IDM5MCAyNDUgMzQwIDI1MCAyOTcgWiIgLz4KICAgIDwhLS0gSW5uZXIgUmlnaHQgUGV0YWwgLS0+CiAgICA8cGF0aCBkPSJNIDI2MiAyOTcgQyAyOTIgMzIwIDMyNyAzNjUgMzIyIDQ0MCBDIDI4NyAzOTAgMjY3IDM0MCAyNjIgMjk3IFoiIC8+CgogICAgPCEtLSBPdXRlciBMZWZ0IFBldGFsIC0tPgogICAgPHBhdGggZD0iTSAyNDIgMzAyIEMgMTkwIDMxMCAxMzAgMzMwIDExNSAzODUgQyAxNzUgMzc1IDIyMCAzNDUgMjQyIDMwMiBaIiAvPgogICAgPCEtLSBPdXRlciBSaWdodCBQZXRhbCAtLT4KICAgIDxwYXRoIGQ9Ik0gMjcwIDMwMiBDIDMyMiAzMTAgMzgyIDMzMCAzOTcgMzg1IEMgMzM3IDM3NSAyOTIgMzQ1IDI3MCAzMDIgWiIgLz4KICA8L2c+Cjwvc3ZnPg==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07060a;
+      --bg-2: #0d0b12;
+      --charcoal: #141018;
+      --surface: rgba(255, 255, 255, 0.035);
+      --surface-strong: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.09);
+      --pink: #ff2d8a;
+      --hotpink: #ff5fa8;
+      --magenta: #d946ef;
+      --purple: #8b5cf6;
+      --violet: #6d28d9;
+      --lavender: #cdb8ff;
+      --text: #f6f3f8;
+      --text-dim: #b3aebd;
+      --text-faint: #726d7d;
+      --grad-1: linear-gradient(120deg, var(--pink), var(--purple));
+      --grad-2: linear-gradient(135deg, var(--magenta), var(--violet));
+      --grad-soft: linear-gradient(120deg, rgba(255, 45, 138, 0.25), rgba(139, 92, 246, 0.25));
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-body: 'Manrope', sans-serif;
+      --ease: cubic-bezier(.16, .84, .44, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    ::selection {
+      background: var(--pink);
+      color: #0a0a0a;
+    }
+
+    /* ===== grain overlay ===== */
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.035;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ===== ambient background blobs ===== */
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(130px);
+      opacity: 0.22;
+      will-change: transform;
+    }
+
+    .blob-1 {
+      width: 640px;
+      height: 640px;
+      background: var(--pink);
+      top: -15%;
+      left: -10%;
+      animation: float1 30s ease-in-out infinite;
+    }
+
+    .blob-2 {
+      width: 680px;
+      height: 680px;
+      background: var(--purple);
+      top: 35%;
+      right: -18%;
+      animation: float2 34s ease-in-out infinite;
+    }
+
+    .blob-3 {
+      display: none;
+    }
+
+    @keyframes float1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(60px, 80px) scale(1.15);
+      }
+    }
+
+    @keyframes float2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-70px, -40px) scale(1.1);
+      }
+    }
+
+    @keyframes float3 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(40px, -60px) scale(1.08);
+      }
+    }
+
+    .cursor-glow {
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(circle, rgba(255, 45, 138, 0.055), rgba(139, 92, 246, 0.035) 45%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: opacity .3s ease;
+      will-change: transform;
+    }
+
+    /* ===== heart-wand cursor + click sparkles ===== */
+    @media (pointer:fine) {
+      * {
+        cursor: none !important;
+      }
+    }
+
+    .magic-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 34px;
+      height: 34px;
+      z-index: 10010;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .25s ease;
+      will-change: transform;
+    }
+
+    .magic-cursor.visible {
+      opacity: 1;
+    }
+
+    .magic-cursor .wand-inner {
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    .magic-cursor svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .magic-cursor.tap .wand-inner {
+      animation: wandTap .32s ease;
+    }
+
+    @keyframes wandTap {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+
+      35% {
+        transform: translate(-50%, -50%) rotate(-18deg) scale(0.85);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+    }
+
+    .sparkle {
+      position: fixed;
+      z-index: 10009;
+      pointer-events: none;
+      line-height: 1;
+      user-select: none;
+      transform: translate(-50%, -50%);
+      animation: sparklePop .65s ease-out forwards;
+      filter: drop-shadow(0 0 4px currentColor);
+    }
+
+    @keyframes sparklePop {
+      0% {
+        transform: translate(-50%, -50%) translate(0, 0) scale(0.4) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(0.1) rotate(var(--rot, 180deg));
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .magic-cursor,
+      .sparkle {
+        display: none !important;
+      }
+
+      @media (pointer:fine) {
+        * {
+          cursor: auto !important;
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .blob {
+        animation: none !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    /* ===== induction status toast ===== */
+    .induction-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 4, 8, 0.6);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s ease;
+    }
+
+    .induction-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #inductionToast.induction-toast {
+      position: relative;
+      width: min(88vw, 400px);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 16px;
+      padding: 44px 34px;
+      border-radius: 28px;
+      background: rgba(20, 16, 24, 0.85);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.65);
+      transform: scale(0.82);
+      opacity: 0;
+      transition: transform .5s cubic-bezier(.16, 1, .3, 1), opacity .4s ease;
+    }
+
+    .induction-overlay.show #inductionToast.induction-toast {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .induction-toast .toast-dot {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 45, 138, 0.22), rgba(139, 92, 246, 0.22));
+      border: 1px solid var(--border);
+      font-size: 26px;
+    }
+
+    .induction-toast .toast-body {
+      max-width: 280px;
+    }
+
+    .induction-toast .toast-title {
+      font-family: var(--font-display);
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .induction-toast .toast-title .status-pip {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 9px #4ade80;
+      flex-shrink: 0;
+    }
+
+    .induction-toast .toast-text {
+      color: var(--text-dim);
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    .induction-toast .toast-explore-btn {
+      margin-top: 20px;
+      font-size: 13.5px;
+      padding: 13px 28px;
+    }
+
+    .induction-toast .toast-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      color: var(--text-faint);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+      transition: color .2s ease;
+    }
+
+    .induction-toast .toast-close:hover {
+      color: var(--text);
+    }
+
+    @media(max-width:480px) {
+      #inductionToast.induction-toast {
+        width: 88vw;
+        min-height: 0;
+        padding: 34px 24px;
+      }
+    }
+
+    section {
+      position: relative;
+      z-index: 3;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    @media(max-width:768px) {
+      .container {
+        padding: 0 20px;
+      }
+    }
+
+    .eyebrow {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 12px;
+      color: var(--lavender);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 26px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .grad-text {
+      background: linear-gradient(100deg, var(--hotpink), var(--purple) 55%, var(--lavender));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14.5px;
+      letter-spacing: 0.01em;
+      padding: 16px 30px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s ease;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(110deg, var(--pink), var(--purple));
+      color: #0a0a0a;
+      box-shadow: 0 8px 30px -8px rgba(255, 45, 138, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px -8px rgba(139, 92, 246, 0.6);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .btn .arrow {
+      transition: transform .35s var(--ease);
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    .btn:focus-visible,
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--lavender);
+      outline-offset: 3px;
+    }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 22px 0;
+      transition: all .5s var(--ease);
+    }
+
+    .navbar.scrolled {
+      padding: 14px 0;
+      background: rgba(8, 7, 11, 0.65);
+      backdrop-filter: blur(18px) saturate(160%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-marks {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo-img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+      transition: height .4s var(--ease);
+    }
+
+    .navbar.scrolled .logo-img {
+      height: 36px;
+    }
+
+    @media(max-width:480px) {
+      .logo-img {
+        height: 36px;
+      }
+
+      .logo {
+        font-size: 17px;
+        gap: 8px;
+      }
+    }
+
+    .uet-logo-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      transition: transform .3s var(--ease);
+    }
+
+    .uet-logo-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .zimal-logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      transition: transform .3s var(--ease);
+    }
+
+    .zimal-logo-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 38px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 500;
+      position: relative;
+      padding: 6px 0;
+      transition: color .3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--grad-1);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s var(--ease);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 120;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      transition: all .3s ease;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 6, 10, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 110;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 26px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media(max-width:900px) {
+
+      .nav-links,
+      .nav-right .btn {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 60px;
+      position: relative;
+    }
+
+    .hero-badge {
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--lavender);
+      margin-bottom: 34px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 9vw, 112px);
+      line-height: 0.98;
+      margin-bottom: 26px;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 21px);
+      color: var(--text-dim);
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero p.intro {
+      max-width: 640px;
+      color: var(--text-dim);
+      font-size: 16.5px;
+      line-height: 1.75;
+      margin-bottom: 44px;
+      font-weight: 400;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 70px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(0.6em);
+      transition: opacity .6s var(--ease), transform .6s var(--ease);
+    }
+
+    .reveal-word.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============ SECTION HEADERS ============ */
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 64px;
+    }
+
+    .section-head.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(32px, 5vw, 56px);
+      margin-bottom: 20px;
+    }
+
+    .section-head p {
+      color: var(--text-dim);
+      font-size: 16.5px;
+      line-height: 1.7;
+    }
+
+    section.pad {
+      padding: 130px 0;
+    }
+
+    @media(max-width:768px) {
+      section.pad {
+        padding: 90px 0;
+      }
+    }
+
+    /* ============ ABOUT ============ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--text-dim);
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .about-copy p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 14px 0;
+    }
+
+    .stat-orb-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: orbFloat 4.6s ease-in-out infinite;
+    }
+
+    .stat-orb-wrap:nth-child(2) {
+      animation-delay: .3s;
+    }
+
+    .stat-orb-wrap:nth-child(3) {
+      animation-delay: .6s;
+    }
+
+    .stat-orb-wrap:nth-child(4) {
+      animation-delay: .9s;
+    }
+
+    @keyframes orbFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    .stat-orb {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+
+    .stat-orb::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.05), rgba(10, 8, 14, 0.55) 70%);
+      backdrop-filter: blur(6px);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .stat-orb::after {
+      content: '';
+      position: absolute;
+      inset: -18px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 45, 138, 0.28), rgba(139, 92, 246, 0.14) 55%, transparent 75%);
+      filter: blur(14px);
+      opacity: 0.55;
+      animation: haloPulse 3.6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes haloPulse {
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: scale(0.94);
+      }
+
+      50% {
+        opacity: 0.75;
+        transform: scale(1.06);
+      }
+    }
+
+    .stat-orb svg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+      z-index: 1;
+      overflow: visible;
+    }
+
+    .stat-orb .ring-track {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.06);
+      stroke-width: 2.5;
+    }
+
+    .stat-orb .ring-fill {
+      fill: none;
+      stroke: url(#statRingGrad);
+      stroke-width: 3;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 7px rgba(255, 45, 138, 0.85)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+      transition: stroke-dashoffset 1.8s cubic-bezier(.16, .84, .44, 1);
+    }
+
+    .stat-content {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
+      text-shadow: 0 0 22px rgba(255, 45, 138, 0.35);
+    }
+
+    .stat-label {
+      color: var(--text-dim);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+    }
+
+    .stat-orb-wrap:hover .stat-orb::after {
+      opacity: 0.9;
+      transform: scale(1.14);
+    }
+
+    .stat-orb-wrap:hover .ring-fill {
+      filter: drop-shadow(0 0 11px rgba(255, 45, 138, 1)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+    }
+
+    @media (max-width:640px) {
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 8px;
+      }
+
+      .stat-orb {
+        width: 118px;
+        height: 118px;
+      }
+
+      .stat-num {
+        font-size: 26px;
+      }
+
+      .stat-label {
+        font-size: 9px;
+      }
+    }
+
+    @media(max-width:900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ GLASS CARD BASE ============ */
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      backdrop-filter: blur(14px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glow-border {
+      position: relative;
+    }
+
+    .glow-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      border-radius: inherit;
+      background: linear-gradient(140deg, rgba(255, 45, 138, 0.55), rgba(139, 92, 246, 0.15) 40%, rgba(139, 92, 246, 0.55));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.7;
+      transition: opacity .4s ease;
+    }
+
+    .glow-border:hover::before {
+      opacity: 1;
+    }
+
+    .card-hover {
+      position: relative;
+      border-color: var(--border);
+      transition: transform .4s var(--ease), border-color .4s ease, box-shadow .4s var(--ease);
+    }
+
+    .card-hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 24px;
+      right: 24px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .45s var(--ease);
+      opacity: 0.9;
+    }
+
+    .card-hover:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-hover:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* ============ LEADERSHIP ============ */
+    .advisor-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 64px;
+    }
+
+    .advisor-card {
+      width: 100%;
+      max-width: 560px;
+      padding: 40px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      cursor: pointer;
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .advisor-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px -20px rgba(255, 45, 138, 0.25);
+    }
+
+    .portrait {
+      border-radius: 26px;
+      background: linear-gradient(150deg, rgba(255, 45, 138, 0.35), rgba(139, 92, 246, 0.35));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.15), transparent 60%);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(1.05) contrast(1.08);
+    }
+
+    .advisor-card .portrait {
+      width: 150px;
+      height: 150px;
+      font-size: 40px;
+      border-radius: 32px;
+    }
+
+    .advisor-info .role-tag {
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .advisor-info h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .advisor-info .dept {
+      color: var(--text-faint);
+      font-size: 14px;
+    }
+
+    .leader-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 70px;
+    }
+
+    .leader-card {
+      padding: 34px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+    }
+
+    .leader-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.65);
+    }
+
+    .leader-card .portrait {
+      width: 100%;
+      aspect-ratio: 1/1;
+      max-width: 220px;
+      margin: 0 auto 22px;
+      font-size: 52px;
+      border-radius: 28px;
+    }
+
+    .leader-card h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .leader-card .role-tag {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pink);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .leader-card .dept {
+      color: var(--text-faint);
+      font-size: 13.5px;
+      margin-bottom: 16px;
+    }
+
+    .view-link {
+      font-size: 12.5px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--lavender);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .member-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .member-grid.cols-3> :nth-last-child(2):nth-child(3n+1),
+    .member-grid.cols-3> :last-child:nth-child(3n+2) {
+      position: relative;
+      left: 50%;
+    }
+
+    .member-card {
+      padding: 24px;
+      cursor: pointer;
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+    }
+
+    .member-card:hover {
+      transform: translateY(-6px) scale(1.012);
+      box-shadow: 0 24px 48px -22px rgba(0, 0, 0, 0.6);
+    }
+
+    .member-card .portrait {
+      width: 100%;
+      aspect-ratio: 1/1;
+      font-size: 30px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .member-card h4 {
+      font-size: 16.5px;
+      margin-bottom: 4px;
+    }
+
+    .member-card .role-tag {
+      font-size: 10.5px;
+      color: var(--pink);
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .member-card .dept {
+      color: var(--text-faint);
+      font-size: 12.5px;
+    }
+
+    @media(max-width:1024px) {
+      .member-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .member-grid.cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .member-grid.cols-3> :nth-last-child(2):nth-child(3n+1),
+      .member-grid.cols-3> :last-child:nth-child(3n+2) {
+        left: 0;
+      }
+
+      .leader-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:560px) {
+
+      .member-grid,
+      .member-grid.cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .advisor-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ============ TEAMS / DOMAINS ============ */
+    .domains-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 22px;
+      margin-bottom: 44px;
+    }
+
+    .domain-block {
+      min-width: 0;
+    }
+
+    .domain-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .domain-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 45, 138, 0.4), transparent);
+    }
+
+    .domain-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .domains-row-single {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    .domains-row-single .domain-block {
+      max-width: 700px;
+      width: 100%;
+    }
+
+    @media(max-width:1024px) {
+      .domains-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:560px) {
+      .domain-pair {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ EVENTS ============ */
+    .events-scroll {
+      display: flex;
+      gap: 26px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .events-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .events-scroll::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      border-radius: 10px;
+    }
+
+    .event-card {
+      min-width: 350px;
+      max-width: 350px;
+      height: 460px;
+      position: relative;
+      scroll-snap-align: start;
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--charcoal);
+      border: 1px solid var(--border);
+      transition: transform .5s var(--ease), border-color .4s ease;
+    }
+
+    @media(max-width:768px) {
+      .events-scroll {
+        gap: 18px;
+        scroll-padding-left: 0;
+      }
+
+      .event-card {
+        min-width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
+        height: 420px;
+      }
+    }
+
+    @media(max-width:480px) {
+      .event-card {
+        min-width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
+        height: 380px;
+      }
+
+      .event-body {
+        padding: 16px 20px 20px;
+      }
+
+      .event-body h3 {
+        font-size: 17px;
+      }
+    }
+
+    .event-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .event-img {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .event-img .cover {
+      width: 100%;
+      height: 100%;
+      transition: transform .7s var(--ease);
+    }
+
+    .event-card:hover .event-img .cover {
+      transform: scale(1.08);
+    }
+
+    .event-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 8, 14, 0.55), transparent 40%);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .event-card:hover .event-img::after {
+      opacity: 1;
+    }
+
+    .event-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      font-family: var(--font-display);
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: rgba(10, 8, 14, 0.6);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--lavender);
+    }
+
+    .event-body {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 18px 24px 22px;
+      background: rgba(10, 8, 14, 0.22);
+      backdrop-filter: blur(1px);
+      transition: background .4s ease, backdrop-filter .4s ease;
+    }
+
+    .event-card:hover .event-body {
+      background: rgba(10, 8, 14, 0.82);
+      backdrop-filter: blur(2px);
+    }
+
+    .event-date {
+      font-size: 12.5px;
+      color: var(--pink);
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .event-body h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .event-body p {
+      color: var(--text-dim);
+      font-size: 13.8px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .event-link {
+      font-size: 12.5px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .major-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .major-card {
+      border-radius: 26px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: flex-end;
+      transition: transform .5s var(--ease);
+    }
+
+    .major-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .major-card .cover {
+      position: absolute;
+      inset: 0;
+      transition: transform .8s var(--ease);
+    }
+
+    .major-card:hover .cover {
+      transform: scale(1.06);
+    }
+
+    .major-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6, 5, 9, 0.95) 10%, rgba(6, 5, 9, 0.2) 60%, transparent);
+    }
+
+    .major-body {
+      position: relative;
+      z-index: 2;
+      padding: 32px;
+    }
+
+    .major-body .event-date {
+      color: var(--hotpink);
+    }
+
+    .major-body h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .major-body p {
+      color: var(--text-dim);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media(max-width:900px) {
+      .major-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============ JOIN CTA ============ */
+    .join-section {
+      padding: 110px 40px;
+      border-radius: 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 45, 138, 0.18), transparent 55%), radial-gradient(circle at 75% 80%, rgba(139, 92, 246, 0.2), transparent 55%), var(--charcoal);
+      border: 1px solid var(--border);
+    }
+
+    .join-section h2 {
+      font-size: clamp(38px, 6vw, 72px);
+      margin-bottom: 18px;
+    }
+
+    .join-section .sub {
+      font-family: var(--font-display);
+      color: var(--lavender);
+      font-size: 16px;
+      margin-bottom: 38px;
+      letter-spacing: 0.02em;
+    }
+
+    .join-section p.desc {
+      max-width: 560px;
+      margin: 0 auto 44px;
+      color: var(--text-dim);
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+
+    .teams-panel {
+      max-width: 1000px;
+      margin: 56px auto 0;
+      display: none;
+    }
+
+    .teams-panel.open {
+      display: block;
+    }
+
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+
+    .team-card {
+      padding: 28px;
+      cursor: pointer;
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px -22px rgba(0, 0, 0, 0.6);
+    }
+
+    .team-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .team-card h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .team-card p {
+      color: var(--text-dim);
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .team-apply {
+      font-size: 12.5px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      color: var(--lavender);
+    }
+
+    @media(max-width:820px) {
+      .teams-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:560px) {
+      .teams-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .join-section {
+        padding: 70px 22px;
+      }
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      padding: 80px 0 40px;
+      position: relative;
+    }
+
+    .footer-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink), var(--purple), transparent);
+      margin-bottom: 70px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand h3 {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-logo-inline {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    .footer-institution {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .footer-institution .footer-logo-inline {
+      height: 34px;
+      flex-shrink: 0;
+      transition: transform .3s var(--ease);
+    }
+
+    .footer-institution a:hover .footer-logo-inline {
+      transform: translateY(-2px);
+    }
+
+    @media(max-width:768px) {
+      .footer-institution {
+        justify-content: flex-start;
+      }
+    }
+
+    .footer-brand p {
+      color: var(--text-dim);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h5 {
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-faint);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14.5px;
+      margin-bottom: 12px;
+      transition: color .3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--pink);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 14px;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      transition: all .3s ease;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .social-icon svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .social-icon:hover {
+      color: var(--pink);
+      transform: translateY(-4px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--text-faint);
+      font-size: 13px;
+    }
+
+    @media(max-width:768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .footer-grid .footer-col[style*="text-align:right"] {
+        text-align: left !important;
+      }
+
+      .footer-grid .footer-col[style*="text-align:right"] .footer-socials {
+        justify-content: flex-start !important;
+      }
+    }
+
+    /* ============ MODALS ============ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(5, 4, 7, 0.88);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 60px 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .45s var(--ease);
+      overflow-y: auto;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-panel {
+      width: 100%;
+      max-width: 900px;
+      background: var(--charcoal);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(40px) scale(0.97);
+      opacity: 0;
+      transition: transform .55s var(--ease), opacity .55s var(--ease);
+      margin-bottom: 60px;
+    }
+
+    .modal-overlay.open .modal-panel {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all .3s ease;
+    }
+
+    .modal-close:hover {
+      background: var(--pink);
+      color: #0a0a0a;
+      transform: rotate(90deg);
+    }
+
+    /* profile modal */
+    .profile-modal-body {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .profile-media {
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 45, 138, 0.25), transparent 60%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.28), transparent 60%);
+    }
+
+    .profile-media .portrait {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 1/1;
+      font-size: 64px;
+      border-radius: 34px;
+    }
+
+    .profile-info {
+      padding: 56px 50px 56px 20px;
+    }
+
+    .profile-info .role-tag {
+      color: var(--pink);
+      font-family: var(--font-display);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .profile-info h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .profile-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .meta-chip {
+      font-size: 12.5px;
+      padding: 7px 14px;
+      border-radius: 100px;
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    .profile-intro {
+      color: var(--text-dim);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .profile-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    @media(max-width:760px) {
+      .profile-modal-body {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-info {
+        padding: 20px 32px 44px;
+      }
+
+      .profile-media {
+        padding: 44px 32px 10px;
+      }
+    }
+
+    /* event modal */
+    .event-modal-hero {
+      height: 280px;
+      position: relative;
+    }
+
+    .event-modal-hero .cover {
+      width: 100%;
+      height: 100%;
+    }
+
+    .event-modal-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--charcoal), transparent 60%);
+    }
+
+    .event-modal-head {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 36px 50px;
+      z-index: 3;
+    }
+
+    .event-modal-head h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .event-modal-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--text-dim);
+      font-size: 13.5px;
+      font-family: var(--font-display);
+    }
+
+    .event-modal-body {
+      padding: 44px 50px 56px;
+    }
+
+    .event-modal-body>p {
+      color: var(--text-dim);
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 44px;
+      max-width: 640px;
+    }
+
+    .event-insta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: -22px;
+      transition: border-color .3s ease, background .3s ease, transform .3s ease;
+    }
+
+    .event-insta-link:hover {
+      border-color: var(--pink);
+      background: var(--surface-strong);
+      transform: translateY(-2px);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 6px;
+      bottom: 6px;
+      width: 1.5px;
+      background: linear-gradient(to bottom, var(--pink), var(--purple));
+    }
+
+    .t-item {
+      position: relative;
+      padding-bottom: 34px;
+      opacity: 0;
+      transform: translateX(-14px);
+      transition: opacity .6s var(--ease), transform .6s var(--ease);
+    }
+
+    .t-item.in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .t-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .t-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 2px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 12px var(--pink);
+    }
+
+    .t-time {
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      color: var(--pink);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .t-label {
+      font-size: 15.5px;
+      color: var(--text);
+    }
+
+    .gallery-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-faint);
+      margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 110px;
+      gap: 12px;
+    }
+
+    .gallery-grid .g-item:nth-child(3n+1) {
+      grid-row: span 2;
+    }
+
+    .g-item {
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: zoom-in;
+      position: relative;
+    }
+
+    .g-item .cover {
+      width: 100%;
+      height: 100%;
+      transition: transform .5s ease;
+    }
+
+    .g-item:hover .cover {
+      transform: scale(1.1);
+    }
+
+    @media(max-width:700px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .event-modal-body,
+      .event-modal-head {
+        padding-left: 26px;
+        padding-right: 26px;
+      }
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(4, 3, 6, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox .cover {
+      max-width: 88vw;
+      max-height: 82vh;
+      border-radius: 16px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 26px;
+      right: 30px;
+      color: #fff;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* application form modal */
+    .form-panel {
+      padding: 52px;
+    }
+
+    .form-panel .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .form-panel h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .form-panel .form-sub {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+
+    .field {
+      position: relative;
+      margin-bottom: 26px;
+    }
+
+    .field label {
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      color: var(--text-faint);
+      font-size: 15px;
+      transition: all .25s var(--ease);
+      pointer-events: none;
+      background: var(--charcoal);
+      padding: 0 6px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 18px 8px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      transition: border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      padding-top: 24px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255, 45, 138, 0.12);
+    }
+
+    .field input:focus+label,
+    .field input.filled+label,
+    .field select:focus+label,
+    .field select.filled+label,
+    .field textarea:focus+label,
+    .field textarea.filled+label {
+      top: -9px;
+      font-size: 11.5px;
+      color: var(--pink);
+      letter-spacing: 0.04em;
+    }
+
+    .field select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      color-scheme: dark;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1.5 7 7.5 13 1.5' stroke='%23cdb8ff' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+      padding-right: 44px;
+    }
+
+    .field select option {
+      background: #141018;
+      color: #f6f3f8;
+    }
+
+    .field .req {
+      color: var(--pink);
+    }
+
+    .field .err {
+      display: none;
+      color: #ff6b9d;
+      font-size: 12.5px;
+      margin-top: 8px;
+    }
+
+    .field.invalid input,
+    .field.invalid select,
+    .field.invalid textarea {
+      border-color: #ff6b9d;
+    }
+
+    .field.invalid .err {
+      display: block;
+    }
+
+    .fee-info {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-bottom: 22px;
+    }
+
+    .fee-info .fee-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .fee-info .fee-note {
+      color: var(--text-dim);
+      font-size: 13.5px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .fee-info .fee-note strong {
+      color: var(--lavender);
+    }
+
+    .fee-info .fee-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13.5px;
+      padding: 8px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .fee-info .fee-row:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .fee-info .fee-row span:first-child {
+      color: var(--text-faint);
+    }
+
+    .fee-info .fee-row span:last-child {
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .field-file {
+      margin-bottom: 26px;
+    }
+
+    .field-file>.file-label {
+      display: block;
+      color: var(--text-faint);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .field-file .file-drop {
+      display: block;
+      border: 1.5px dashed var(--border);
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.02);
+      transition: border-color .3s ease, background .3s ease;
+    }
+
+    .field-file .file-drop:hover {
+      border-color: var(--pink);
+    }
+
+    .field-file .file-drop.has-file {
+      border-color: var(--pink);
+      background: rgba(255, 45, 138, 0.06);
+    }
+
+    .field-file .file-drop .file-drop-text {
+      color: var(--text-dim);
+      font-size: 13.5px;
+    }
+
+    .field-file .file-drop .file-name {
+      color: var(--lavender);
+      font-size: 13px;
+      margin-top: 8px;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .field-file input[type="file"] {
+      display: none;
+    }
+
+    .field-file .err {
+      display: none;
+      color: #ff6b9d;
+      font-size: 12.5px;
+      margin-top: 8px;
+    }
+
+    .field-file.invalid .file-drop {
+      border-color: #ff6b9d;
+    }
+
+    .field-file.invalid .err {
+      display: block;
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .optional-tag {
+      color: var(--text-faint);
+      font-size: 11.5px;
+      font-style: italic;
+    }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+      position: relative;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid rgba(10, 10, 10, 0.3);
+      border-top-color: #0a0a0a;
+      animation: spin .7s linear infinite;
+      display: none;
+    }
+
+    .btn-submit.loading .spinner {
+      display: inline-block;
+    }
+
+    .btn-submit.loading .btn-label {
+      opacity: 0.7;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .success-state {
+      padding: 90px 50px;
+      text-align: center;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .success-state.show {
+      display: flex;
+    }
+
+    .success-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 60px rgba(255, 45, 138, 0.5);
+      animation: pop .6s var(--ease);
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.4);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .success-state h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .success-state p {
+      color: var(--text-dim);
+      font-size: 15px;
+      max-width: 380px;
+      line-height: 1.7;
+    }
+
+    .form-body {
+      transition: opacity .3s ease;
+    }
+
+    .form-body.hide {
+      display: none;
+    }
+
+    /* generic fade-scroll utility applied via JS */
+    .fade-in {
+      animation: fadein .9s var(--ease) both;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="grain"></div>
+  <div class="ambient">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="magic-cursor" id="magicCursor">
+    <div class="wand-inner">
+      <svg viewBox="-2.5 -2.5 27 36" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9,13.5 C2,10.5 0,3.5 5.5,1.5 C10,0 12.5,6.5 9.5,13.5 Z" fill="#ff3b57" />
+        <path d="M12,14.5 C19,11.5 22,4.5 16.5,2.5 C12,1 9.5,7.5 12.5,14.5 Z" fill="#ff3b57" />
+        <path d="M9.5,14.5 C4.5,20 2,26 6,30.5" stroke="#ff3b57" stroke-width="3.4" fill="none"
+          stroke-linecap="round" />
+        <path d="M12.5,15 C17,21 20,26 16.5,31" stroke="#ff3b57" stroke-width="3.4" fill="none"
+          stroke-linecap="round" />
+        <circle cx="10.7" cy="13.5" r="2.6" fill="#d81f3c" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <span class="logo-marks">
+          <a href="https://www.instagram.com/zimaluet/" target="_blank" rel="noopener noreferrer"
+            class="zimal-logo-link" aria-label="ZIMAL UET on Instagram" title="ZIMAL UET on Instagram"><img
+              src="images/img001.png"
+              alt="ZIMAL logo" class="logo-img"></a>
+          <a href="https://www.instagram.com/uetlahore.pk/" target="_blank" rel="noopener noreferrer"
+            class="uet-logo-link" aria-label="UET Lahore on Instagram" title="UET Lahore on Instagram"><img
+              src="images/img002.png"
+              alt="UET Lahore logo" class="logo-img"></a>
+        </span>
+        ZIMAL UET
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-nav>Home</a></li>
+        <li><a href="#about" data-nav>About</a></li>
+        <li><a href="#team" data-nav>Team</a></li>
+        <li><a href="#major-events" data-nav>Events</a></li>
+        <li><a href="#join" data-nav>Join Us</a></li>
+        <li><a href="#contact" data-nav>Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#join" class="btn btn-primary" style="padding:12px 24px; font-size:13.5px;">Join ZIMAL</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-nav-mobile>Home</a>
+    <a href="#about" data-nav-mobile>About</a>
+    <a href="#team" data-nav-mobile>Team</a>
+    <a href="#major-events" data-nav-mobile>Events</a>
+    <a href="#join" data-nav-mobile>Join Us</a>
+    <a href="#contact" data-nav-mobile>Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-badge">UET Lahore · Est. Women-Led Society</div>
+    <h1 class="reveal" id="heroTitle">
+      <span class="grad-text">ZIMAL UET</span>
+      <span>Women's Society</span>
+    </h1>
+    <div class="hero-tagline reveal">Empowering Women. Creating Impact. Building the Future</div>
+    <p class="intro reveal">
+      ZIMAL is a women-focused university society at UET Lahore dedicated to leadership, creativity,
+      collaboration and personal growth. A community where students design events, lead teams,
+      and build the confidence to shape meaningful social impact on and beyond campus.
+    </p>
+    <div class="hero-ctas reveal">
+      <a href="#about" class="btn btn-primary">Explore ZIMAL <span class="arrow">→</span></a>
+      <a href="#join" class="btn btn-ghost">Join the Society</a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="pad" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <div class="eyebrow">About ZIMAL</div>
+          <h2 style="font-size:clamp(30px,4.5vw,48px); margin-bottom:26px;">More Than a Society.<br><span
+              class="grad-text">A Community.</span></h2>
+          <p>ZIMAL UET Women's Society exists to give women at UET Lahore a real platform to lead, create and
+            connect,<strong> not a footnote to campus life, but a home for it.</strong> We build spaces where
+            ambition is normal and collaboration replaces competition.</p>
+          <p>Our purpose is simple: open doors to leadership roles that are too often out of reach, and back
+            that access with mentorship, structure and a genuine community. From organizing flagship events to
+            running creative teams in design, media and documentation, every member gains hands-on experience
+            that extends well past graduation.</p>
+          <p>Our vision is a campus culture where women don't just participate they direct, design and decide.
+            Through seminars, awareness drives, and interactive series, ZIMAL turns everyday student energy into
+            lasting institutional impact.</p>
+        </div>
+        <div class="reveal">
+          <div class="stats-grid">
+            <svg width="0" height="0" style="position:absolute">
+              <defs>
+                <linearGradient id="statRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff2d8a" />
+                  <stop offset="55%" stop-color="#d946ef" />
+                  <stop offset="100%" stop-color="#8b5cf6" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="stat-orb-wrap">
+              <div class="stat-orb">
+                <svg viewBox="0 0 150 150">
+                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
+                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="82"></circle>
+                </svg>
+                <div class="stat-content">
+                  <div class="stat-num" data-count="25" data-suffix="+">0</div>
+                  <div class="stat-label">Members</div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-orb-wrap">
+              <div class="stat-orb">
+                <svg viewBox="0 0 150 150">
+                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
+                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="64"></circle>
+                </svg>
+                <div class="stat-content">
+                  <div class="stat-num" data-count="4" data-suffix="+">0</div>
+                  <div class="stat-label">Events</div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-orb-wrap">
+              <div class="stat-orb">
+                <svg viewBox="0 0 150 150">
+                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
+                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="91"></circle>
+                </svg>
+                <div class="stat-content">
+                  <div class="stat-num" data-count="7">0</div>
+                  <div class="stat-label">Teams</div>
+                </div>
+              </div>
+            </div>
+            <div class="stat-orb-wrap">
+              <div class="stat-orb">
+                <svg viewBox="0 0 150 150">
+                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
+                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="73"></circle>
+                </svg>
+                <div class="stat-content">
+                  <div class="stat-num" data-count="15" data-suffix="+">0</div>
+                  <div class="stat-label">Collabs</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEADERSHIP ============ -->
+  <section class="pad" id="team">
+    <div class="container">
+      <div class="section-head center reveal">
+        <div class="eyebrow" style="justify-content:center;">Society Leadership</div>
+        <h2>The Women Behind ZIMAL</h2>
+        <p>Leaders who mentor, uplift and build ZIMAL together.</p>
+      </div>
+
+      <div class="advisor-wrap reveal" id="advisorWrap"></div>
+      <div class="leader-row reveal" id="leaderRow"></div>
+
+      <div class="section-head center reveal" style="margin-top:10px;">
+        <div class="eyebrow" style="justify-content:center;">Core Team</div>
+        <h2 style="font-size:32px;">Executives</h2>
+      </div>
+      <div class="member-grid cols-3 reveal" id="secretaryGrid" style="margin-bottom:20px;"></div>
+    </div>
+  </section>
+
+  <!-- ============ TEAMS / DOMAINS ============ -->
+  <section class="pad" id="teams-domains">
+    <div class="container">
+      <div class="section-head center reveal">
+        <div class="eyebrow" style="justify-content:center;">Team Heads</div>
+        <h2>Directors &amp; Co-Directors</h2>
+        <p>Seven creative and operational domains, each led by a director and co-director duo.</p>
+      </div>
+      <div id="domainsWrap" class="reveal"></div>
+    </div>
+  </section>
+
+  <!-- ============ MAJOR EVENTS ============ -->
+  <section class="pad" id="major-events">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Flagship</div>
+        <h2>Our Major Events</h2>
+        <p>A running log of what ZIMAL has hosted lately — Click to see the full lineup.</p>
+      </div>
+      <div class="major-grid reveal" id="majorGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTS ============ -->
+  <section class="pad" id="events" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Beyond ZIMAL</div>
+        <h2>Collaborations</h2>
+        <p>Partnerships and joint initiatives that extend ZIMAL's reach within and beyond UET.</p>
+      </div>
+      <div class="events-scroll reveal" id="eventsScroll"></div>
+    </div>
+  </section>
+
+  <!-- ============ JOIN / INDUCTIONS ============ -->
+  <section class="pad" id="join">
+    <div class="container">
+      <div class="join-section reveal">
+        <div class="eyebrow" style="justify-content:center;">Join</div>
+        <h2>Be Part of <span class="grad-text">ZIMAL</span></h2>
+        <div class="sub">Your ideas. Your creativity. Your impact.</div>
+        <p class="desc">Every ZIMAL team starts with students who simply decided to show up. Apply to join
+          one of our seven teams and help build the events, media and moments that define the society.</p>
+        <button class="btn btn-primary" id="applyNowBtn">Apply Now <span class="arrow">→</span></button>
+
+        <div class="teams-panel" id="teamsPanel">
+          <div class="teams-grid" id="inductionGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-line"></div>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="footer-brand-title"><a href="https://www.instagram.com/zimaluet/" target="_blank"
+              rel="noopener noreferrer" aria-label="ZIMAL UET on Instagram" title="ZIMAL UET on Instagram"><img
+                src="images/img003.png"
+                alt="ZIMAL logo" class="footer-logo-inline"></a><span class="grad-text">ZIMAL UET</span></h3>
+          <p style="margin-bottom:6px; font-weight:600; color:var(--text-dim);">Women's Society</p>
+          <p>A student-led community at UET Lahore building leadership, creativity and impact through
+            women-focused initiatives, teams and events.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="#about">About</a>
+          <a href="#team">Team</a>
+          <a href="#events">Events</a>
+          <a href="#join">Join Us</a>
+        </div>
+        <div class="footer-col" style="text-align:right;">
+          <h5>Institution</h5>
+          <div class="footer-institution"><a href="https://www.instagram.com/uetlahore.pk/" target="_blank"
+              rel="noopener noreferrer" aria-label="UET Lahore on Instagram" title="UET Lahore on Instagram"><img
+                src="images/img004.png"
+                alt="UET Lahore logo" class="footer-logo-inline uet"></a>
+            <p style="color:var(--text-dim); font-size:14.5px; line-height:1.7; margin:0;">University of Engineering and
+              Technology, Lahore</p>
+          </div>
+          <div class="footer-socials" style="justify-content:flex-end;">
+            <a href="https://www.instagram.com/zimaluet/" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.2" cy="6.8" r="1" />
+              </svg></a>
+            <a href="https://www.linkedin.com/company/zimaluet/" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.6">
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <line x1="8" y1="11" x2="8" y2="17" />
+                <line x1="8" y1="7.5" x2="8" y2="7.6" />
+                <path d="M12 17v-3.5a2.5 2.5 0 0 1 5 0V17" />
+              </svg></a>
+            <a href="https://www.facebook.com/zimaluet/" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M15 3h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3V3Z" />
+              </svg></a>
+            <a href="mailto:zimalsociety@gmail.com" class="social-icon" aria-label="Email"><svg viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="3" y="5" width="18" height="14" rx="3" />
+                <path d="m4 7 8 6 8-6" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ZIMAL UET Women's Society. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ PROFILE MODAL ============ -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal-panel">
+      <button class="modal-close" data-close>&times;</button>
+      <div class="profile-modal-body" id="profileModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ============ EVENT MODAL ============ -->
+  <div class="modal-overlay" id="eventModal">
+    <div class="modal-panel" style="max-width:960px;">
+      <button class="modal-close" data-close>&times;</button>
+      <div id="eventModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <div class="cover" id="lightboxImg"></div>
+  </div>
+
+  <!-- ============ APPLICATION FORM MODAL ============ -->
+  <div class="modal-overlay" id="applyModal">
+    <div class="modal-panel" style="max-width:640px;">
+      <button class="modal-close" data-close>&times;</button>
+      <div class="form-panel">
+        <div class="eyebrow">Induction — <span id="applyTeamName">Team</span></div>
+        <h2>Join ZIMAL</h2>
+        <p class="form-sub">Tell us a little about yourself.</p>
+
+        <form id="applyForm" class="form-body" novalidate>
+          <div class="field">
+            <input type="text" id="f-name" required>
+            <label for="f-name">Full Name <span class="req">*</span></label>
+            <div class="err">Please enter your full name.</div>
+          </div>
+          <div class="field">
+            <input type="text" id="f-reg" required>
+            <label for="f-reg">Registration Number <span class="req">*</span></label>
+            <div class="err">Please enter your registration number.</div>
+          </div>
+          <div class="field">
+            <input type="text" id="f-dept" required>
+            <label for="f-dept">Department <span class="req">*</span></label>
+            <div class="err">Please enter your department.</div>
+          </div>
+          <div class="field">
+            <select id="f-session" required>
+              <option value=""></option>
+              <option>2023</option>
+              <option>2024</option>
+              <option>2025</option>
+              <option>2026</option>
+            </select>
+            <label for="f-session">Session <span class="req">*</span></label>
+            <div class="err">Please select your session.</div>
+          </div>
+          <div class="field">
+            <select id="f-residence" required>
+              <option value=""></option>
+              <option>Hostellite</option>
+              <option>Day Scholar</option>
+            </select>
+            <label for="f-residence">Hostellite / Day Scholar <span class="req">*</span></label>
+            <div class="err">Please select an option.</div>
+          </div>
+          <div class="field">
+            <input type="tel" id="f-contact" required>
+            <label for="f-contact">Contact No. <span class="req">*</span></label>
+            <div class="err">Please enter your contact number.</div>
+          </div>
+          <div class="field">
+            <input type="email" id="f-email" required>
+            <label for="f-email">Email <span class="req">*</span></label>
+            <div class="err">Please enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <select id="f-team" required>
+              <option value=""></option>
+              <option>Documentation</option>
+              <option>Videography</option>
+              <option>Design</option>
+              <option>Social Media</option>
+              <option>Sponsorship</option>
+              <option>Decor &amp; Event Management</option>
+              <option>Hosting &amp; Series</option>
+            </select>
+            <label for="f-team">Team Preference <span class="req">*</span></label>
+            <div class="err">Please choose a team preference.</div>
+          </div>
+          <div class="field">
+            <textarea id="f-why" required></textarea>
+            <label for="f-why">Why do you want to join ZIMAL? <span class="req">*</span></label>
+            <div class="err">This field is required.</div>
+          </div>
+          <div class="field">
+            <textarea id="f-skills"></textarea>
+            <label for="f-skills">What skills or experience would you bring?</label>
+          </div>
+
+          <div class="fee-info">
+            <div class="fee-title">Induction Fee</div>
+            <p class="fee-note">Submit induction fee of <strong>Rs. 200/- only</strong> to the JazzCash
+              account below, then upload a screenshot of the payment as proof.</p>
+            <div class="fee-row">
+              <span>Account Number</span>
+              <span>0313-1780441</span>
+            </div>
+            <div class="fee-row">
+              <span>Account Type</span>
+              <span>JazzCash</span>
+            </div>
+            <div class="fee-row">
+              <span>Account Title</span>
+              <span>Sara Shahzad</span>
+            </div>
+          </div>
+
+          <div class="field-file" id="feeField">
+            <label class="file-label" for="f-fee-proof">Payment Screenshot <span class="req">*</span></label>
+            <label class="file-drop" id="feeDrop" for="f-fee-proof">
+              <div class="file-drop-text" id="feeDropText">Tap to upload image (max 10MB)</div>
+              <div class="file-name" id="feeFileName"></div>
+            </label>
+            <input type="file" id="f-fee-proof" accept="image/*" required>
+            <div class="err" id="feeErr">Please attach your payment screenshot (image, max 10MB).</div>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn" disabled>
+              <span class="spinner"></span><span class="btn-label">Submit Application</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="success-state" id="successState">
+          <div class="success-icon">✦</div>
+          <h3>Application Submitted ✦</h3>
+          <p>Thank you for your interest in ZIMAL. We'll be in touch soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ INDUCTION STATUS MODAL ============ -->
+  <div class="induction-overlay" id="inductionOverlay">
+    <div class="induction-toast glass" id="inductionToast" role="status">
+      <button class="toast-close" id="toastClose" aria-label="Dismiss notification">&times;</button>
+      <div class="toast-dot">🎉</div>
+      <div class="toast-body">
+        <div class="toast-title"><span class="status-pip"></span> Inductions Open</div>
+        <div class="toast-text">ZIMAL's inductions are now open! Pick a team, tell us why you want in, and become
+          part of the crew.</div>
+        <button class="btn btn-primary toast-explore-btn" id="toastExplore">Apply Now <span
+            class="arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================
+       DATA LAYER — edit these arrays to update site content
+       ========================================================= */
+    const DATA = {
+      advisor: {
+        name: "Prof. Dr. Rehana Shahid", role: "Society Advisor", dept: "Chairperson Department of Physics",
+        degree: "PhD Material Physics", initials: "RS",
+        photo: "images/img005.jpg",
+        linkedin: "https://www.linkedin.com/in/prof-dr-rehana-shahid-41b3a01bb?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        showInstagram: false,
+        intro: "I've had the privilege of watching ZIMAL grow from a small idea into one of the most active student communities on campus. My role is to guide the leadership team while giving them the room to make their own decisions, that's where real growth happens. I'm proud of how far this society has come and even more excited for what our members will build next."
+      },
+      president: {
+        name: "Qirrat Fatima", role: "President", dept: "Mechanical Engineering", degree: "BS Mechanical Engineering", initials: "QF", photo: "images/img006.jpg", linkedin: "https://www.linkedin.com/in/qirrat?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        showInstagram: false,
+        intro: "The one who is appointed over the affairs of the people should begin by teaching himself before teaching others. - Attributed to Imam Ali [RA].As I step into this responsibility, I hope to lead with sincerity, strengthen the bonds that make us one, and dedicate my heart and efforts to a tenure that every member can proudly call their own, In sha' Allah."
+      },
+      vp: {
+        name: "Aleshba Kashif", role: "Vice President", dept: "Mechanical Engineering", degree: "BS Mechanical Engineering", initials: "AK", photo: "images/img007.jpg", linkedin: "https://www.linkedin.com/in/aleshba-kashif-1a6a94255?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        showInstagram: false,
+        intro: "Alhamdulillah, my journey at UET began with engineering, but along the way, it became so much more than just a degree. I discovered new interests, met some amazing people, and eventually found a community that felt like home. ZIMAL stood out to me because it creates a space where girls can connect, support each other, and grow with confidence. I’m naturally curious, always up for learning something new, and probably have more interests than I have time for! As Vice President, I hope to turn that curiosity into action by creating opportunities, empowering girls to step forward, own their space, and leave their mark."
+      },
+      secretaries: [
+        {
+          name: "Freeha Qayyum", photo: "images/img008.jpg", role: "General Secretary", dept: "Computer Science", degree: "BS Computer Science", initials: "FQ", linkedin: "https://www.linkedin.com/in/freeha-qayyum/ ", photoPosition: "top",
+          showInstagram: false,
+          intro: " If being everywhere at once was a major, I’d be graduating with honors. General Secretary by title, but mostly the one behind the scenes making sure the chaos looks organized usually with a cup of chai in hand. I believe good conversations create great ideas, and when girls support each other, those ideas become unstoppable. I’m here to help build a space where every woman on campus feels backed, confident, and ready to lead. A little obsessed with getting things right, but always leaving room for fun along the way."
+        },
+        {
+          name: "Sara Shahzad", photo: "images/img009.jpg", role: "Finance Secretary", dept: "Environmental Engineering", degree: "BS Environmental Sciences", initials: "SS", linkedin: "https://www.linkedin.com/in/sara-shahzad-7bb619369?utm_source=share_via&utm_content=profile&utm_medium=member_ios", photoPosition: "center", showInstagram: false,
+          intro: "My name is Sara Shahzad, an Environmental Science student at UET Lahore and Finance Secretary at Zimal for this tenure. I am committed to transparency, responsible financial management, and effective resource utilization. I actively contribute to Pakistan Youth Parliament, Pakistan Justice and Rights Initiative and I serve as Media Relations Officer at YPDC UET Lahore Chapter, and am a part of the Climate Action Forum. Through Model United Nations (MUNs), particularly UNHCR, I engage with humanitarian and human rights issues. I aim to transform ideas into meaningful initiatives through leadership, collaboration, and dedication."
+        },
+        {
+          name: "Sushmita Timalsina", photo: "images/img010.jpg", role: "Section Editor", dept: "Civil Engineering", degree: "BS Civil Engineering", initials: "ST", linkedin: "https://www.linkedin.com/in/sushmita-timalsina-324108331?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          photoPosition: "bottom", showInstagram: false,
+          intro: "Through my role as Section Editor and Media Coordinator, I aim to amplify the voices of young women in engineering and turn their ideas, achievements, and stories into something people can see and remember. I believe media is more than just content,it is a tool for empowerment, connection, and visibility. From shaping stories to coordinating creative teams, I enjoy bringing people and ideas together to create work that feels meaningful. My goal is to build a space where creativity, inclusivity, and technical excellence coexist, while making sure every voice gets its moment to shine. After all, good stories deserve to be told and great ones deserve to be heard."
+        },
+        {
+          name: "Hira Barkat", role: "Director General", dept: "City & Regional Planning", degree: "BS City & Regional Planning",linkedin:"https://www.linkedin.com/in/hira-barkat-a17b01291?utm_source=share_via&utm_content=profile&utm_medium=member_android", photo: "images/img011.jpg", photoPosition: "bottom", showInstagram: false,
+          intro: "I’m someone who enjoys turning ideas into action and bringing people together to make things happen. As a City & Regional Planning student, I’m naturally drawn to understanding how people, spaces, and communities come together and I bring that same mindset into leadership. I enjoy taking on challenges, coordinating teams, and making sure even the smallest ideas have room to grow. As Director General at ZIMAL, I’m here to lead with purpose, support the people around me, and create an environment where everyone feels confident enough to contribute, create, and take their space."
+        },
+        {
+          name: "Wajiha Sohail", photo: "images/img012.jpg", role: "Event Management Head", dept: "Industrial & Manufacturing Engineering", degree: " BS Industrial & Manufacturing Engineering", initials: "WS", showInstagram: false, linkedin: "https://www.linkedin.com/in/wajiha-sohail-336b2a338?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          intro: "Industrial Engineering brain, builder at heart, and probably overthinking how to optimize something that was already working perfectly fine. I love turning complicated systems into smarter, smoother workflows and bringing a little AI into the mix. When I’m not building software or experimenting with web frameworks, you’ll probably find me hosting a tech event, debating on stage, or making sure an event doesn’t completely descend into chaos. I’m big on creating, optimizing, and solving problems that actually matter. Basically, if it can be built, improved, automated, or made 10x smoother, I’m probably already thinking about how to do it."
+        },
+      ],
+      domains: [
+        {
+          name: "Documentation", director: { name: "Emaan Faisal", dept: "Civil Engineering", degree: "BS Civil Engineering", linkedin: "https://www.linkedin.com/in/emaan-faisal-949a873a3?utm_source=share_via&utm_content=profile&utm_medium=member_android", showInstagram: false, photo: "images/img013.png", intro: "Civil engineer by training, storyteller by nature  because apparently, I refused to pick just one lane. I build structures that stand strong and turn chaotic information into stories people actually want to read. Research analyst by day, calligrapher at heart, reader and writer always. As Director of Documentation at Zimal UET, I’m basically the person who turns “wait, what’s happening?” into “ohhh, that makes sense.” Give me messy notes, scattered ideas, and absolute chaos. I’ll hand you back clean docs with main character energy. Precision is my thing, creativity is my cheat code, and making complicated things simple? That’s the whole flex." },
+          codirector: { name: "Omail Asad", dept: "Mechanical Engineering", degree: "BS Mechanical Engineering", linkedin: "https://www.linkedin.com/in/omail-asad-3239b63a2", showInstagram: false, photoPosition: "center 25%", photoScale: 1.15, photo: "images/img014.jpg", intro: "I’m a Mechanical Engineering student who somehow enjoys both the technical and creative sides of things. You’ll probably find me designing something on CAD, organizing a task, or turning a random idea into an actual project. I love learning new tools, taking on responsibilities, and working with people who bring new ideas to the table. I’m naturally curious and definitely a little detail-oriented (okay, maybe more than a little). I enjoy making things more organized, creative, and presentable. I’m always up for learning something new, trying something different, and turning every experience into a story worth remembering." }
+        },
+        {
+          name: "Videography", director: { name: "Mamoor Fatima", dept: "Electrical Engineering", degree: "BS Electrical Engineering", linkedin: "https://www.linkedin.com/in/mamoor-fatima-152809407", showInstagram: false, photo: "images/img015.png", intro: "Heyy, I’m Mamoor Fatima, your Director of Videography and the person permanently attached to a camera. I turn campus chaos, random laughs, and blink-and-you’ll-miss-it moments into cinematic main-character scenes. I’m all about capturing the vibes, the people, and the memories one frame (and approximately 500 retakes) at a time. A little creativity, a little madness, and a dangerously full camera roll later, I’m here to make sure every ZIMAL moment gets the storyline it deserves. Because if it’s not on camera, did it even happen?" },
+          codirector: { name: "Zeemal Asif", dept: "Electrical Engineering", degree: "BS Electrical Engineering", linkedin: "https://www.linkedin.com/in/zeemal-asif-8283a7330/", showInstagram: false, photoPosition: "center 20%", photo: "images/img016.jpg", intro: "Hey, I’m Zeemal. I like being where creativity meets a good camera angle and where “let’s just shoot this quickly” somehow turns into a full production. As a Co-Director of Videography, I’m here to capture the energy, emotions, and little details that make ZIMAL what it is. I enjoy experimenting with visuals, telling stories without saying too much, and turning ordinary moments into something people actually want to watch twice." }
+        },
+        {
+          name: "Design", director: { name: "Ruqaya Batool", dept: "Industrial & Manufacturing Engineering", degree: "BS IME", linkedin: "https://www.linkedin.com/in/ruqaya-batool-2729b8371?utm_source=share_via&utm_content=profile&utm_medium=member_android", showInstagram: false, photoPosition: "center 12%", photoScale: 1.6, photo: "images/img017.jpg", intro: "I make pixels behave, bully ugly fonts, and have an unhealthy attachment to pretty typography. Most of my best ideas arrive at completely unreasonable hours, usually when I should be sleeping. I love playing with layouts, colors, and random concepts until something unexpectedly cool comes out of it. If I’m staring at a screen for too long, I’m probably fixing a 2-pixel alignment nobody else will notice. Anyway, give me ideas. I’m bored. " },
+          codirector: { name: "Fiza Atiq ", dept: "Institute of Data Science", degree: "BS Business Data Analytics", showInstagram: false, photoPosition: "center 20%", photo: "images/img018.jpg", intro: "I’m Fiza Atiq, Co-Director of Graphic Design and someone who genuinely believes there’s no such thing as “too many ideas.”  I’m into graphic design, painting, and basically anything that lets my creative side run wild. I love playing with colors, concepts, and aesthetics to turn simple ideas into visuals that actually say something. I’m always experimenting, brainstorming, and probably making another design when I should be sleeping. For me, creativity is about having fun, telling stories, and making ideas impossible to scroll past." }
+        },
+        {
+          name: "Social Media", director: { name: "Aqsa Khalid", dept: "Mechanical Engineering", degree: "BS Mechanical Engineering", linkedin: "https://www.linkedin.com/in/aqsa-khalid-459221371?utm_source=share_via&utm_content=profile&utm_medium=member_android", showInstagram: false, photoPosition: "center 20%", photo: "images/img019.jpg", intro: "You’ll probably find me somewhere between a good idea, a creative project, and a to-do list that keeps getting longer. I’m a Mechanical Engineering student who somehow ended up falling in love with social media, content creation, and storytelling too. I enjoy turning “this could be cool” into content people actually stop scrolling for. I’m usually planning, creating, editing, or making things unnecessarily better. I love creative challenges, meaningful conversations, and ideas with personality. Basically, I like building things, sometimes with machines, sometimes with stories, and occasionally both at once." },
+          codirector: { name: "Umaima Iqbal", dept: "Computer Engineering", degree: "BS Computer Engineering", linkedin: "https://www.linkedin.com/in/umaima-iqbal-676719342", showInstagram: false, photoPosition: "center 20%", photo: "images/img020.jpg", intro: "Heyy, I’m Umaima Iqbal, a Computer Engineering student and the newest addition to ZIMAL’s Social Media team. Honestly, I joined with enthusiasm, curiosity, and maybe slightly less knowledge of social media than I’d like to admit . But I’m always ready to learn, experiment, and figure things out along the way. Outside social media, I’m into website design and app development, so if there’s something technical that needs fixing, I’m probably your girl . I’m excited to learn, contribute, meet amazing people, and see where this ZIMAL journey takes me. Consider me available for ideas, help, and mild chaos. " }
+        },
+        {
+          name: "Sponsorship", director: { name: "Aneela Zahoor", dept: "Mining Engineering", degree: "BS Mining Engineering", linkedin: "https://www.linkedin.com/in/aneela-zahoor-7619a93b9", showInstagram: false, photoPosition: "center 10%", photoScale: 1, photo: "images/img021.jpg", intro: "Aneela Zahoor, an explorer of opportunities, new experiences, and probably a few things I didn’t plan on getting involved in. I’m currently part of SoME as Director of Competitions & Global Opportunities and a member of the Sponsorship Team, while also contributing to JUSTUJU’s Documentation Team. I genuinely enjoy meeting people, working on meaningful projects, and saying yes to opportunities that push me outside my comfort zone. I believe every experience comes with a lesson, sometimes a win, sometimes a plot twist. I’m here to learn, connect, contribute, and make every opportunity count. " },
+          codirector: { name: "Maha Waqas", dept: "Institute of Environmental Engineering", degree: "BS Environmental Sciences", showInstagram: false, linkedin: "", photoPosition: "center 20%", photoScale: 1, photo: "images/img022.jpg", intro: "I believe there’s something powerful about knowing your worth, owning your story, and never feeling the need to shrink yourself for anyone. I care deeply about women finding their voice, taking up space, and unapologetically being themselves. As Co-Director of Sponsorship & PR, I love turning ideas into conversations, connections, and opportunities that actually go somewhere. I’m expressive, ambitious, curious, and probably a little too invested in the things I care about. I’m drawn to bold minds, big dreams, and people who bring their whole selves to the table. At ZIMAL, I’m here to connect, create, and make every opportunity count. " }
+        },
+        {
+          name: "Decor & Event Management", director: { name: "Eman Ali Rana", dept: "Transportation Engineering and Management", degree: "BS Transportation Engineering", showInstagram: false, linkedin: "https://www.linkedin.com/in/eman-ali-rana-30b50634a/", photoPosition: "center 15%", photoScale: 1, photo: "images/img023.jpg", intro: "Eman Ali here, a people person, badminton enthusiast, and part-time chef whenever I feel like it. I’ve studied across different cities, which probably explains my love for meeting new people and collecting stories along the way. I appreciate discipline in the people around me. Although, admittedly, I sometimes cheat on this habit of mine.  I love socialising, getting to know people beyond the surface, and learning from every interaction. Currently, I’m serving as Media Head at UET Tribune, where I get to mix creativity, communication, and people skills into something I genuinely enjoy. " },
+          codirector: { name: "Raveeha Asim", dept: "Institute of Business and Management", degree: "Business Information Technology", showInstagram: false, linkedin: "https://www.linkedin.com/in/raveeha-asim-b5a779365/", photoPosition: "center 15%", photoScale: 1, photo: "images/img024.jpg", intro: "I’m Raveeha Asim, someone who genuinely enjoys being where leadership, technology, creativity, and people come together. I’m currently working as an HR & Documentation Lead at Eco Dialogue and have also contributed to the UET Science Society through volunteering and event activities. I’m curious about digital marketing, content creation, social media, data analytics, and, of course, all the new AI tools worth experimenting with. As part of ZIMAL, I’m excited to meet inspiring women, grow as a leader, and turn ideas into meaningful opportunities, collaborations, and maybe a little organized chaos along the way." }
+        },
+        {
+          name: "Hosting & Series", director: { name: "Maliha batool", dept: "Institute of Business and Management", degree: "Business Information Technology", showInstagram: false, linkedin: "https://www.linkedin.com/in/maliha-batool-578256347?utm_source=share_via&utm_content=profile&utm_medium=member_android", photoPosition: "center 15%", photoScale: 1, photo: "images/img025.jpg", intro: "I’m a curious mind, a creative soul, and someone who genuinely enjoys turning ideas into action. I love working with people, taking the lead when needed, and creating experiences that bring teams together. I’m always up for a new challenge, whether it’s learning something completely new, figuring things out as I go, or turning a random idea into something real. I believe the best experiences come with good people, a little chaos, and plenty of fun. Basically, I’m here to learn, create, connect, and make things happen." },
+          codirector: { name: "Syeda Mannal Bukhari", dept: "Electrical Engineering", degree: "BS Electrical Engineering", showInstagram: false, linkedin: "", photoPosition: "center 15%", photoScale: 1, photo: "images/img026.jpg", intro: "Hi, I’m Syeda Mannal Bukhari, an Electrical Engineering student who enjoys finding a balance between logic and creativity. When I’m not buried in coursework, you’ll probably find me sketching random ideas, getting lost in a good book, or going down an unexpected rabbit hole of articles. I’m a confident and fluent public speaker who enjoys expressing ideas clearly and connecting with people through words. I also love taking raw thoughts and turning them into stories, messages, and content that genuinely resonate. For me, creativity is about giving ideas a voice." }
+        }
+      ],
+      events: [
+        {
+          id: "e0", name: "Scientia Spectrum", date: "October 28, 2026", category: "Collaboration", color: "linear-gradient(135deg,#6d28d9,#ff2d8a)", instagram: "https://www.instagram.com/p/DcWEo25MyYw/",
+          photo: "images/img027.jpg",
+          location: "UET Lahore",
+          desc: "The collab you didn’t see coming, but the one you need. UET Science Society in collaboration with Zimal UET  proudly presents Scientia Spectrum 2026, our flagship annual magazine launch. This isn’t just a magazine reveal; it’s a full-scale revolution of ideas, creativity, and cutting-edge innovation designed to push boundaries. Step into a vibrant world where brilliant minds, striking layouts, and groundbreaking student research finally collide. Join the spectrum, experience the future of campus publishing, and witness history unfold with us."
+        },
+        {
+          id: "e1", name: "Pakistan Students Association Japan(PSAJ) Webinar", date: "September 5, 2026", category: "Webinar", color: "linear-gradient(135deg,#ff2d8a,#8b5cf6)", instagram: "https://www.instagram.com/p/DcymVoxDIR9/", photo: "images/img028.jpg", photoPosition: "center 15%",
+          desc: "Zimal UET Lahore proudly served as the official collaborator for the Your Gateway to Japan webinar. This insightful educational session was organized by UET Tribune in cooperation with the Pakistan Students Association Japan (PSAJ), providing students with a valuable platform to explore international opportunities, academic pathways, and cultural connections.",
+          location: "Online Webinar",
+        },
+        {
+          id: "e2", name: "Project Breathe 5.0", date: "August 2, 2026", category: "Plantation Drive", color: "linear-gradient(135deg,#d946ef,#6d28d9)", instagram: "https://www.instagram.com/p/DbV5jbFMiaq/", photo: "images/img029.jpg", photoPosition: "center 15%",
+          desc: "Organized by the UET Science Society, Project Breathe 5.0 unites passionate societies under a shared vision of environmental sustainability and community engagement. In collaboration with the Environmental & Horticulture Society UET Lahore, UET Tribune, and Zimal, this initiative promotes awareness, encourages meaningful action, and strengthens a collective commitment to a greener future, creating an impact that extends beyond today to inspire positive change for generations to come.",
+          location: "Online Meet Session",
+        },
+        {
+          id: "e3", name: "ASHRAE Learning Portal (ALP) 2026", date: "July 18, 2026", category: "Skill Development Program", color: "linear-gradient(135deg,#ff5fa8,#a855f7)", instagram: "https://www.instagram.com/p/Da75GTeqgmx/", photo: "images/img030.jpg", photoPosition: "center 15%",
+          desc: "ASHRAE UET Lahore Student Branch is proud to collaborate with Zimal UET Lahore for ASHRAE Learning Portal (ALP) 2026. Together, we aim to create a space where technical excellence is complemented by creativity, leadership, and meaningful expression.This collaboration reflects our shared commitment to empowering students through learning, collaboration, and personal growth. By bringing together engineering and creativity, we hope to inspire fresh perspectives, encourage innovation, and build a stronger student community.",
+          location: "Online Program",
+        },
+        {
+          id: "e4", name: "Medfest 8.0", date: "March 29, 2026", category: "Media Festival", color: "linear-gradient(135deg,#8b5cf6,#ff2d8a)", instagram: "https://www.instagram.com/p/DWecx-9CGDx/", photo: "images/img031.jpg", photoPosition: "center 15%",
+          desc: "Zimal proudly partnered as a collaborator for Medfest 8.0, the flagship annual media festival organized by the UET Media Society (UMS) at the University of Engineering and Technology (UET), Lahore. As UET's biggest media festival, Medfest serves as a premier creative platform for students to showcase artistic talents, improve media skills, and network with industry professionals, a mission supported by Zimal's collaborative involvement.",
+          location: "Chemcical Seminar Hall",
+        },
+        {
+          id: "e5", name: "Symphony of Excellence-The Music Hour", date: "May 7, 2026.", category: "Entertainment", color: "linear-gradient(135deg,#a855f7,#ff2d8a)", instagram: "https://www.instagram.com/p/DX_3-23CF5P/", photo: "images/img032.jpg", photoPosition: "center 15%",
+          desc: "Presented by the UET Music Society, Symphony of Excellence–The Music Hour was a vibrant musical gathering held on Thursday, May 7, 2026, from 11:30 AM to 2:00 PM onwards at the Staff Club, UET. Organized in collaboration with Zimal and LCWU Music, this inspiring afternoon was dedicated to showcasing female talent, celebrating artistic expression, and highlighting the creativity, confidence, and strength of women in music through powerful performances.",
+          location: "Staff Club UET",
+        }
+      ],
+      majorEvents: [
+        {
+          id: "m0", name: "International Women's Day", date: "March 9, 2026", category: "Seminar", location: "Transportation Seminar Hall",
+          color: "linear-gradient(135deg,#8b5cf6,#ff5fa8)", photoPosition: "top",
+          photo: "images/img033.webp",
+          galleryPhotos: [
+            { photo: "images/img034.webp", position: "center" },
+            { photo: "images/img035.webp", position: "center 62%" },
+            { photo: "images/img036.webp", position: "center" },
+            { photo: "images/img037.webp", position: "center" },
+            { photo: "images/img038.webp", position: "center" },
+            { photo: "images/img039.webp", position: "center" }
+
+          ],
+          desc: "Zimal organized a high profile seminar at UET Lahore to celebrate International Women's Day under the inspiring theme; Give to Gain – Women in STEM: Innovating the Future. Held in active collaboration with the Faculty & Staff Development Program, the event brought together esteemed female faculty members, prominent guest speakers, and an enthusiastic audience of students in the department hall.The session featured comprehensive panel discussions focusing on strategies for empowering women in engineering and technology, breaking industry barriers, and encouraging active student leadership and technical contribution. The interactive Q&A segments allowed undergraduates to directly engage with trailblazing professionals.",
+          gallery: 6
+        },
+        {
+          id: "m1", name: "Breast Cancer Awareness", date: "October 14, 2025", category: "Awareness Drive", location: "Chemical Seminar Hall",
+          color: "linear-gradient(135deg,#ff2d8a,#8b5cf6)", photoPosition: "top",
+          photo: "images/img040.webp",
+          galleryPhotos: [
+            { photo: "images/img041.webp", position: "center" },
+            { photo: "images/img042.webp", position: "center" },
+            { photo: "images/img043.webp", position: "center" },
+            { photo: "images/img044.webp", position: "center" },
+            { photo: "images/img045.webp", position: "center" },
+            { photo: "images/img046.webp", position: "center" }
+          ],
+          desc: "In official partnership with the Pink Ribbon Organization, Zimal Society spearheaded a comprehensive campus wide awareness campaign for Pinktober 2025. The initiative focused heavily on spreading vital knowledge regarding breast cancer prevention, early detection methods, and proactive healthcare among the student body and university faculty.Volunteers established an interactive registration and information desk outside the main hall, adorned with informative flyers, pink ribbon props, and creative Survivor hand held signs. The drive featured a formal multimedia awareness presentation inside the auditorium, educating attendees on self-examination and clinical support networks.",
+          gallery: 6
+        },
+        {
+          id: "m2", name: "Voice of Visionaries", date: "October 10, 2024", category: "Flagship", location: "Transportation Seminar Hall",
+          color: "linear-gradient(135deg,#d946ef,#6d28d9)", photoPosition: "30% 32%",
+          photo: "images/img047.jpg",
+          galleryPhotos: [
+            { photo: "images/img048.webp", position: "center" },
+            { photo: "images/img049.webp", position: "center" },
+            { photo: "images/img050.webp", position: "center" },
+            { photo: "images/img051.webp", position: "center" },
+            { photo: "images/img052.webp", position: "center" },
+            { photo: "images/img053.webp", position: "center" }
+          ],
+          desc: "Zimal hosted its flagship student empowerment platform, Voice of Visionaries, designed to cultivate public speaking, confidence, and creative expression among undergraduates. The event provided a prestigious stage for student participants to share bold ideas, innovative tech visions, and personal talents before a distinguished panel of faculty members and peers.Structured around an immersive event timeline spanning morning registration, keynote addresses, structured panel discussions, and mentorship circles the program created deep connections between rising student leaders and seasoned academics.",
+          gallery: 6
+        },
+        {
+          id: "m3", name: "Digital Defenders", date: "December 10, 2025", category: "Awareness", location: "EE Seminar Hall",
+          color: "linear-gradient(135deg,#ff5fa8,#a855f7)", photoPosition: "top",
+          photo: "images/img054.png",
+          galleryPhotos: [
+            { photo: "images/img055.webp", position: "center" },
+            { photo: "images/img056.webp", position: "center" },
+            { photo: "images/img057.webp", position: "center" },
+            { photo: "images/img058.webp", position: "center" },
+            { photo: "images/img059.webp", position: "bottom" },
+            { photo: "images/img060.webp", position: "center" }
+          ],
+          desc: "Zimal organized the vital awareness session Digital Defenders to address the pressing societal challenge of online harassment and digital violence against women and girls. The event convened legal experts, cybersecurity advocates, and student participants to discuss digital safety, online privacy best practices, and available legal recourses.Featured guest speakers including legal practitioners and women's development representatives provided actionable guidance on navigating digital spaces securely, managing cyber threats, and fostering a resilient, supportive online community across campus.",
+          gallery: 6
+        }
+      ],
+      teams: [
+        { name: "Documentation", icon: "📝", desc: "Capture and archive every ZIMAL event and initiative with clean, structured reporting." },
+        { name: "Videography", icon: "🎥", desc: "Film, edit and produce recap content that brings ZIMAL's events to life on screen." },
+        { name: "Design", icon: "🎨", desc: "Shape ZIMAL's visual identity across posters, decks, banners and digital content." },
+        { name: "Social Media", icon: "📱", desc: "Plan and run ZIMAL's online presence, from announcements to community engagement." },
+        { name: "Sponsorship", icon: "🤝", desc: "Build partnerships and secure the resources that make ZIMAL's events possible." },
+        { name: "Decor & Event Management", icon: "✨", desc: "Design the on-ground experience — layout, decor and logistics for every event." },
+        { name: "Hosting & Series", icon: "🎤", desc: "Anchor stage moments and lead ZIMAL's recurring interactive series segments." }
+      ]
+    };
+
+    /* =========================================================
+       INDUCTIONS TOGGLE — single switch for the whole site
+       Flip to true when inductions reopen: the startup notice AND
+       the "closed" popup on form submit both turn off, and the
+       form goes back to submitting for real. No rebuilding needed.
+       ========================================================= */
+    const INDUCTIONS_OPEN = true;
+
+    /* =========================================================
+       HELPERS
+       ========================================================= */
+    function initials(name) { return name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase(); }
+
+    function portraitDiv(name, photo, photoPosition, photoScale) {
+      if (photo) { return `<div class="portrait"><img src="${photo}" alt="${name}" style="width:100%;height:100%;object-fit:cover;object-position:${photoPosition || 'center'};transform:scale(${photoScale || 1});position:relative;z-index:0;"/></div>`; }
+      return `<div class="portrait">${initials(name)}</div>`;
+    }
+    function coverDiv(colorGrad, photo, photoPosition) {
+      if (photo) { return `<div class="cover" style="width:100%;height:100%;background:${colorGrad};"><img src="${photo}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:${photoPosition || 'center'};display:block;"/></div>`; }
+      return `<div class="cover" style="width:100%;height:100%;background:${colorGrad};"></div>`;
+    }
+
+    /* =========================================================
+       RENDER: LEADERSHIP
+       ========================================================= */
+    function renderLeadership() {
+      const a = DATA.advisor;
+      document.getElementById('advisorWrap').innerHTML = `
+    <div class="glass glow-border advisor-card" data-profile='${encodeURIComponent(JSON.stringify({ ...a, role: a.role })).replace(/'/g, '%27')}'>
+      ${portraitDiv(a.name, a.photo, a.photoPosition, a.photoScale)}
+      <div class="advisor-info">
+        <div class="role-tag">${a.role}</div>
+        <h3>${a.name}</h3>
+        <div class="dept">${a.dept}</div>
+      </div>
+    </div>`;
+
+      const leaderHtml = [DATA.president, DATA.vp].map(p => `
+    <div class="glass card-hover leader-card" data-profile='${encodeURIComponent(JSON.stringify(p)).replace(/'/g, '%27')}'>
+      ${portraitDiv(p.name, p.photo, p.photoPosition, p.photoScale)}
+      <span class="role-tag">${p.role}</span>
+      <h3>${p.name}</h3>
+      <div class="dept">${p.dept}</div>
+      <span class="view-link">View Profile →</span>
+    </div>`).join('');
+      document.getElementById('leaderRow').innerHTML = leaderHtml;
+
+      document.getElementById('secretaryGrid').innerHTML = DATA.secretaries.map(s => `
+    <div class="glass card-hover member-card" data-profile='${encodeURIComponent(JSON.stringify(s)).replace(/'/g, '%27')}'>
+      ${portraitDiv(s.name, s.photo, s.photoPosition, s.photoScale)}
+      <span class="role-tag">${s.role}</span>
+      <h4>${s.name}</h4>
+      <div class="dept">${s.dept}</div>
+    </div>`).join('');
+    }
+
+    /* =========================================================
+       RENDER: DOMAINS
+       ========================================================= */
+    function renderDomains() {
+      const wrap = document.getElementById('domainsWrap');
+      const rows = [];
+      for (let i = 0; i < DATA.domains.length; i += 2) { rows.push(DATA.domains.slice(i, i + 2)); }
+      wrap.innerHTML = rows.map(pair => `
+    <div class="domains-row${pair.length === 1 ? ' domains-row-single' : ''}">
+      ${pair.map(d => `
+        <div class="domain-block">
+          <div class="domain-title">${d.name}</div>
+          <div class="domain-pair">
+            ${[{ ...d.director, role: 'Director — ' + d.name }, { ...d.codirector, role: 'Co-Director — ' + d.name }].map(m => `
+              <div class="glass card-hover member-card" data-profile='${encodeURIComponent(JSON.stringify(m)).replace(/'/g, '%27')}'>
+                ${portraitDiv(m.name, m.photo, m.photoPosition, m.photoScale)}
+                <span class="role-tag">${m.role}</span>
+                <h4>${m.name}</h4>
+                <div class="dept">${m.dept} · ${m.degree}</div>
+              </div>`).join('')}
+          </div>
+        </div>`).join('')}
+    </div>`).join('');
+    }
+
+    /* =========================================================
+       RENDER: EVENTS
+       ========================================================= */
+    function renderEvents() {
+      document.getElementById('eventsScroll').innerHTML = DATA.events.map(e => `
+    <div class="event-card" data-event='${e.id}' data-kind="regular">
+      <div class="event-img">${coverDiv(e.color, e.photo, e.photoPosition)}</div>
+      <div class="event-body">
+        <div class="event-date">${e.date}</div>
+        <h3>${e.name}</h3>
+        <span class="event-link">Discover →</span>
+      </div>
+    </div>`).join('');
+
+      document.getElementById('majorGrid').innerHTML = DATA.majorEvents.map(e => `
+    <div class="major-card" data-event='${e.id}' data-kind="major">
+      ${coverDiv(e.color, e.photo, e.photoPosition)}
+      <div class="major-body">
+        <span class="event-tag" style="position:static; display:inline-block; margin-bottom:14px;">${e.category}</span>
+        <div class="event-date">${e.date}</div>
+        <h3>${e.name}</h3>
+        <p>${e.desc.slice(0, 90)}…</p>
+      </div>
+    </div>`).join('');
+    }
+
+    /* =========================================================
+       RENDER: INDUCTION TEAMS
+       ========================================================= */
+    function renderTeams() {
+      document.getElementById('inductionGrid').innerHTML = DATA.teams.map(t => `
+    <div class="glass card-hover team-card" data-team="${t.name}">
+      <div class="team-icon">${t.icon}</div>
+      <h4>${t.name}</h4>
+      <p>${t.desc}</p>
+      <span class="team-apply">Apply →</span>
+    </div>`).join('');
+    }
+
+    renderLeadership(); renderDomains(); renderEvents(); renderTeams();
+
+    /* =========================================================
+       COLLABORATIONS — AUTO-SLIDE (continuous loop)
+       ========================================================= */
+    (function initEventsAutoSlide() {
+      const track = document.getElementById('eventsScroll');
+      if (!track) return;
+      let paused = false;
+
+      function nextSlide() {
+        if (paused) return;
+        const card = track.querySelector('.event-card');
+        if (!card) return;
+        const step = card.getBoundingClientRect().width + 26; // card width + gap
+        const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+        track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + step, behavior: 'smooth' });
+      }
+
+      setInterval(nextSlide, 2000);
+
+      track.addEventListener('mouseenter', () => paused = true);
+      track.addEventListener('mouseleave', () => paused = false);
+    })();
+
+    /* =========================================================
+       INDUCTION STATUS TOAST
+       ========================================================= */
+    const inductionOverlay = document.getElementById('inductionOverlay');
+    function showInductionToast() {
+      if (!inductionOverlay) return;
+      inductionOverlay.classList.add('show');
+    }
+    function dismissInductionToast() {
+      if (!inductionOverlay) return;
+      inductionOverlay.classList.remove('show');
+    }
+    (function initInductionToast() {
+      const closeBtn = document.getElementById('toastClose');
+      const exploreBtn = document.getElementById('toastExplore');
+      if (!inductionOverlay || !closeBtn) return;
+      if (INDUCTIONS_OPEN) setTimeout(showInductionToast, 900);
+      closeBtn.addEventListener('click', dismissInductionToast);
+      inductionOverlay.addEventListener('click', e => { if (e.target === inductionOverlay) dismissInductionToast(); });
+      if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+          dismissInductionToast();
+          const panel = document.getElementById('teamsPanel');
+          if (panel) {
+            panel.classList.add('open');
+            setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
+          }
+        });
+      }
+    })();
+
+
+    /* =========================================================
+       NAVBAR
+       ========================================================= */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.querySelectorAll('[data-nav-mobile]').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    const navSections = ['home', 'about', 'team', 'major-events', 'join', 'contact'];
+    const navLinkEls = document.querySelectorAll('[data-nav]');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinkEls.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    navSections.forEach(id => { const el = document.getElementById(id); if (el) sectionObserver.observe(el); });
+
+    /* =========================================================
+       CURSOR GLOW
+       ========================================================= */
+    const glow = document.getElementById('cursorGlow');
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2, gx = mx, gy = my;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animateGlow() { gx += (mx - gx) * 0.12; gy += (my - gy) * 0.12; glow.style.transform = `translate(${gx - 140}px, ${gy - 140}px)`; requestAnimationFrame(animateGlow); }
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) { animateGlow(); } else { glow.style.display = 'none'; }
+
+    /* =========================================================
+       HEART-WAND CURSOR + CLICK SPARKLES
+       ========================================================= */
+    (function initMagicCursor() {
+      const cursor = document.getElementById('magicCursor');
+      if (!cursor) return;
+      const isFinePointer = window.matchMedia('(pointer:fine)').matches;
+      if (!isFinePointer || reduceMotion) { cursor.style.display = 'none'; return; }
+
+      let cx = mx, cy = my;
+      function animateCursor() {
+        cx += (mx - cx) * 0.35; cy += (my - cy) * 0.35;
+        cursor.style.transform = `translate(${cx}px, ${cy}px)`;
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+      document.addEventListener('mousemove', () => cursor.classList.add('visible'), { once: true });
+      document.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
+      document.addEventListener('mouseenter', () => cursor.classList.add('visible'));
+
+      const sparkleChars = ['✦', '✧', '⋆', '•'];
+      const sparkleColors = ['#ffd700', '#ffcb3d', '#ffe066', '#ffb703', '#fff3b0'];
+      function spawnSparkles(x, y) {
+        const count = 7 + Math.floor(Math.random() * 4);
+        for (let i = 0; i < count; i++) {
+          const s = document.createElement('span');
+          s.className = 'sparkle';
+          const angle = Math.random() * Math.PI * 2;
+          const dist = 24 + Math.random() * 46;
+          s.style.left = x + 'px';
+          s.style.top = y + 'px';
+          s.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+          s.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+          s.style.setProperty('--rot', (Math.random() * 360 - 180) + 'deg');
+          s.style.color = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+          s.style.fontSize = (10 + Math.random() * 12) + 'px';
+          s.textContent = sparkleChars[Math.floor(Math.random() * sparkleChars.length)];
+          document.body.appendChild(s);
+          s.addEventListener('animationend', () => s.remove());
+        }
+      }
+      const wandInner = cursor.querySelector('.wand-inner');
+      document.addEventListener('click', e => {
+        spawnSparkles(e.clientX, e.clientY);
+        cursor.classList.remove('tap');
+        if (wandInner) void wandInner.offsetWidth;
+        cursor.classList.add('tap');
+      });
+    })();
+
+    /* =========================================================
+       SCROLL REVEALS
+       ========================================================= */
+    function revealCheck() {
+      document.querySelectorAll('.reveal:not(.in)').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) {
+          el.classList.add('in');
+        }
+      });
+    }
+    let revealTicking = false;
+    function revealOnScroll() {
+      if (revealTicking) return;
+      revealTicking = true;
+      requestAnimationFrame(() => { revealCheck(); revealTicking = false; });
+    }
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+    window.addEventListener('resize', revealOnScroll);
+    revealCheck();
+    window.addEventListener('load', revealCheck);
+    /* safety net: guarantee every section is visible even if scroll events are missed */
+    setTimeout(revealCheck, 400);
+    setTimeout(() => { document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')); }, 3000);
+
+    /* hero word-by-word reveal */
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.reveal').forEach((el, i) => {
+        if (document.getElementById('home').contains(el)) {
+          setTimeout(() => el.classList.add('in'), i * 140);
+        }
+      });
+    });
+
+    /* =========================================================
+       STAT COUNTERS
+       ========================================================= */
+    const counters = document.querySelectorAll('.stat-num');
+    document.querySelectorAll('.ring-fill').forEach(circle => {
+      const len = circle.getTotalLength();
+      circle.style.strokeDasharray = len;
+      circle.style.strokeDashoffset = len;
+    });
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target; const target = parseInt(el.dataset.count, 10); const suffix = el.dataset.suffix || ''; let cur = 0;
+          const ring = el.closest('.stat-orb').querySelector('.ring-fill');
+          const len = ring.getTotalLength();
+          const pct = parseFloat(ring.dataset.pct) / 100;
+          requestAnimationFrame(() => { ring.style.strokeDashoffset = len - (len * pct); });
+          const step = Math.max(1, Math.ceil(target / 60));
+          const iv = setInterval(() => {
+            cur += step;
+            if (cur >= target) { cur = target; clearInterval(iv); }
+            el.textContent = cur.toLocaleString() + (cur >= target ? suffix : '');
+          }, 25);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    /* =========================================================
+       MODAL HELPERS
+       ========================================================= */
+    function openModal(el) { el.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeModal(el) { el.classList.remove('open'); document.body.style.overflow = ''; }
+    document.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', () => btn.closest('.modal-overlay') && closeModal(btn.closest('.modal-overlay'))));
+    document.querySelectorAll('.modal-overlay').forEach(ov => ov.addEventListener('click', e => { if (e.target === ov) closeModal(ov); }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay.open').forEach(closeModal); closeLightbox(); } });
+
+    /* =========================================================
+       PROFILE MODAL
+       ========================================================= */
+    const profileModal = document.getElementById('profileModal');
+    document.addEventListener('click', e => {
+      const card = e.target.closest('[data-profile]');
+      if (!card) return;
+      const p = JSON.parse(decodeURIComponent(card.getAttribute('data-profile')));
+      document.getElementById('profileModalBody').innerHTML = `
+    <div class="profile-media">${portraitDiv(p.name, p.photo, p.photoPosition, p.photoScale)}</div>
+    <div class="profile-info">
+      <span class="role-tag">${p.role}</span>
+      <h2>${p.name}</h2>
+      <div class="profile-meta">
+        ${p.dept ? `<span class="meta-chip">${p.dept}</span>` : ''}
+        ${p.degree ? `<span class="meta-chip">${p.degree}</span>` : ''}
+      </div>
+      <p class="profile-intro">${p.intro || ''}</p>
+      <div class="profile-socials">
+        <a href="${p.linkedin || '#'}" ${p.linkedin ? 'target="_blank" rel="noopener noreferrer"' : ''} class="social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.6"/><path d="M12 17v-3.5a2.5 2.5 0 0 1 5 0V17"/></svg></a>
+        ${p.showInstagram === false ? '' : '<a href="#" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>'}
+      </div>
+    </div>`;
+      openModal(profileModal);
+    });
+
+    /* =========================================================
+       EVENT MODAL
+       ========================================================= */
+    const eventModal = document.getElementById('eventModal');
+    function buildEventModal(e, kind) {
+      const hero = `
+    <div class="event-modal-hero">${coverDiv(e.color, e.photo, e.photoPosition)}
+      <div class="event-modal-head">
+        <h2>${e.name}</h2>
+        <div class="event-modal-meta">
+          <span>📅 ${e.date}</span>
+          <span>📍 ${e.location}</span>
+          <span>${e.category}</span>
+        </div>
+      </div>
+    </div>`;
+
+      /* Collaborations (regular events) show only the description —
+         no timeline, no gallery — the hero header above stays. */
+      if (kind === 'regular') {
+        return `${hero}
+    <div class="event-modal-body">
+      <p>${e.desc}</p>
+      ${e.instagram ? `<a href="${e.instagram}" target="_blank" rel="noopener noreferrer" class="event-insta-link" aria-label="View on Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.2" cy="6.8" r="1" />
+        </svg>
+        <span>View on Instagram</span>
+      </a>` : ''}
+    </div>`;
+      }
+
+      const galleryCount = e.gallery || 4;
+      const galleryHtml = e.galleryPhotos && e.galleryPhotos.length
+        ? e.galleryPhotos.map((g, i) => `
+    <div class="g-item" data-lightbox-photo="${g.photo}" data-lightbox-position="${g.position || 'center'}" data-lightbox-color="${e.color}" data-lightbox-label="${e.name} — Photo ${i + 1}">
+      ${coverDiv(e.color, g.photo, g.position)}
+    </div>`).join('')
+        : Array.from({ length: galleryCount }).map((_, i) => `
+    <div class="g-item" data-lightbox-color="${e.color}" data-lightbox-label="${e.name} — Photo ${i + 1}">
+      ${coverDiv(e.color)}
+    </div>`).join('');
+
+      return `${hero}
+    <div class="event-modal-body">
+      <p>${e.desc}</p>
+      <div class="gallery-title">Event Gallery</div>
+      <div class="gallery-grid">${galleryHtml}</div>
+    </div>`;
+    }
+
+    document.addEventListener('click', e => {
+      const card = e.target.closest('[data-event]');
+      if (!card) return;
+      const id = card.getAttribute('data-event');
+      const kind = card.getAttribute('data-kind');
+      const all = [...DATA.events, ...DATA.majorEvents];
+      const ev = all.find(x => x.id === id);
+      if (!ev) return;
+      document.getElementById('eventModalBody').innerHTML = buildEventModal(ev, kind);
+      openModal(eventModal);
+      // animate timeline items in sequence (no-op when there is no timeline)
+      const items = document.querySelectorAll('#eventModalBody .t-item');
+      items.forEach((it, i) => setTimeout(() => it.classList.add('in'), 180 + i * 150));
+    });
+
+    /* =========================================================
+       LIGHTBOX
+       ========================================================= */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    function closeLightbox() { lightbox.classList.remove('open'); }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('click', e => {
+      const item = e.target.closest('.g-item');
+      if (!item) return;
+      const color = item.getAttribute('data-lightbox-color');
+      const photo = item.getAttribute('data-lightbox-photo');
+      const position = item.getAttribute('data-lightbox-position') || 'center';
+      lightboxImg.style.background = color;
+      lightboxImg.style.backgroundImage = photo ? `url("${photo}")` : '';
+      lightboxImg.style.backgroundSize = 'cover';
+      lightboxImg.style.backgroundPosition = position;
+      lightboxImg.style.width = 'min(80vw, 700px)';
+      lightboxImg.style.height = 'min(70vh, 500px)';
+      lightbox.classList.add('open');
+    });
+
+    /* =========================================================
+       INDUCTIONS / APPLY FLOW
+       ========================================================= */
+    const teamsPanel = document.getElementById('teamsPanel');
+    document.getElementById('applyNowBtn').addEventListener('click', () => {
+      teamsPanel.classList.toggle('open');
+      if (teamsPanel.classList.contains('open')) {
+        setTimeout(() => teamsPanel.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
+      }
+    });
+
+    const applyModal = document.getElementById('applyModal');
+    const applyForm = document.getElementById('applyForm');
+    const successState = document.getElementById('successState');
+    const teamSelect = document.getElementById('f-team');
+
+    document.addEventListener('click', e => {
+      const tc = e.target.closest('[data-team]');
+      if (!tc) return;
+      const team = tc.getAttribute('data-team');
+      document.getElementById('applyTeamName').textContent = team;
+      teamSelect.value = team;
+      teamSelect.classList.add('filled');
+      applyForm.classList.remove('hide');
+      successState.classList.remove('show');
+      openModal(applyModal);
+    });
+
+    /* floating label filled-state tracking */
+    document.querySelectorAll('.field input, .field select, .field textarea').forEach(inp => {
+      const sync = () => inp.classList.toggle('filled', !!inp.value);
+      inp.addEventListener('input', sync);
+      inp.addEventListener('change', sync);
+      inp.addEventListener('blur', sync);
+    });
+
+    /* validation + real submit to Google Sheets */
+    const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxI9PrIOGxfWPIwftVpnYT7Qv-c7d-kvuRG04cHCWpG5cVK4NWee5NngtLuNEObeqqZ/exec';
+    const requiredFields = ['f-name', 'f-reg', 'f-dept', 'f-session', 'f-residence', 'f-contact', 'f-email', 'f-team', 'f-why', 'f-skills'];
+
+    /* ---- fee screenshot upload ---- */
+    const feeInput = document.getElementById('f-fee-proof');
+    const feeField = document.getElementById('feeField');
+    const feeDrop = document.getElementById('feeDrop');
+    const feeDropText = document.getElementById('feeDropText');
+    const feeFileName = document.getElementById('feeFileName');
+    const feeErr = document.getElementById('feeErr');
+    const submitBtn = document.getElementById('submitBtn');
+    const MAX_FEE_SIZE = 10 * 1024 * 1024; // 10MB
+    const DEFAULT_FEE_ERR = 'Please attach your payment screenshot (image, max 10MB).';
+    let feeProofData = null; // { base64, name, type, size }
+
+    function updateSubmitAvailability() {
+      submitBtn.disabled = !feeProofData;
+    }
+
+    function resetFeeUpload() {
+      feeProofData = null;
+      feeInput.value = '';
+      feeDrop.classList.remove('has-file');
+      feeDropText.textContent = 'Tap to upload image (max 10MB)';
+      feeFileName.textContent = '';
+      feeField.classList.remove('invalid');
+      feeErr.textContent = DEFAULT_FEE_ERR;
+      updateSubmitAvailability();
+    }
+
+    feeInput.addEventListener('change', () => {
+      const file = feeInput.files[0];
+      feeProofData = null;
+      feeDrop.classList.remove('has-file');
+      feeFileName.textContent = '';
+      feeField.classList.remove('invalid');
+
+      if (!file) { updateSubmitAvailability(); return; }
+
+      if (!file.type.startsWith('image/')) {
+        feeErr.textContent = 'Please upload a valid image file.';
+        feeField.classList.add('invalid');
+        feeInput.value = '';
+        updateSubmitAvailability();
+        return;
+      }
+      if (file.size > MAX_FEE_SIZE) {
+        feeErr.textContent = 'That file is too large — max size is 10MB.';
+        feeField.classList.add('invalid');
+        feeInput.value = '';
+        updateSubmitAvailability();
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        feeProofData = {
+          base64: String(reader.result).split(',')[1],
+          name: file.name,
+          type: file.type,
+          size: file.size
+        };
+        feeDrop.classList.add('has-file');
+        feeDropText.textContent = 'Screenshot attached ✓ — tap to replace';
+        feeFileName.textContent = file.name;
+        feeErr.textContent = DEFAULT_FEE_ERR;
+        updateSubmitAvailability();
+      };
+      reader.onerror = () => {
+        feeErr.textContent = 'Could not read that file — please try again.';
+        feeField.classList.add('invalid');
+        updateSubmitAvailability();
+      };
+      reader.readAsDataURL(file);
+    });
+
+    updateSubmitAvailability();
+
+    applyForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      if (!INDUCTIONS_OPEN) {
+        showInductionToast();
+        return;
+      }
+
+      let valid = true;
+      requiredFields.forEach(id => {
+        const el = document.getElementById(id);
+        const field = el.closest('.field');
+        const isEmpty = !el.value || !el.value.trim();
+        field.classList.toggle('invalid', isEmpty);
+        if (isEmpty) valid = false;
+      });
+
+      const emailEl = document.getElementById('f-email');
+      const emailField = emailEl.closest('.field');
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim());
+      if (emailEl.value.trim() && !emailValid) {
+        emailField.classList.add('invalid');
+        valid = false;
+      }
+
+      if (!feeProofData) {
+        feeField.classList.add('invalid');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const btn = submitBtn;
+      btn.classList.add('loading');
+      btn.disabled = true;
+
+      const payload = {
+        name: document.getElementById('f-name').value.trim(),
+        regNo: document.getElementById('f-reg').value.trim(),
+        dept: document.getElementById('f-dept').value.trim(),
+        contact: document.getElementById('f-contact').value.trim(),
+        email: document.getElementById('f-email').value.trim(),
+        session: document.getElementById('f-session').value,
+        residence: document.getElementById('f-residence').value,
+        team: document.getElementById('f-team').value,
+        why: document.getElementById('f-why').value.trim(),
+        skills: document.getElementById('f-skills').value.trim(),
+        feeProofName: feeProofData.name,
+        feeProofType: feeProofData.type,
+        feeProofBase64: feeProofData.base64
+      };
+
+      fetch(SHEET_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      })
+        .catch(() => { })
+        .finally(() => {
+          btn.classList.remove('loading');
+          applyForm.classList.add('hide');
+          successState.classList.add('show');
+        });
+    });
+
+    /* reset form state on modal close */
+    [applyModal].forEach(m => {
+      const obs = new MutationObserver(() => {
+        if (!m.classList.contains('open')) {
+          setTimeout(() => {
+            applyForm.reset();
+            document.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+            document.querySelectorAll('.filled').forEach(f => f.classList.remove('filled'));
+            resetFeeUpload();
+            applyForm.classList.remove('hide');
+            successState.classList.remove('show');
+          }, 400);
+        }
+      });
+      obs.observe(m, { attributes: true, attributeFilter: ['class'] });
+    });
+  </script>
+</body>
+
+</html>
