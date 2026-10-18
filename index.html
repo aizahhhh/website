@@ -1218,12 +1218,6 @@
       left: 50%;
     }
 
-    @media(min-width:1025px) {
-      .member-grid.cols-3> :last-child:nth-child(3n+1) {
-        grid-column: 2;
-      }
-    }
-
     .member-card {
       padding: 24px;
       cursor: pointer;
@@ -1291,7 +1285,22 @@
       }
     }
 
+    @media(max-width:1024px) {
+      #secretaryGrid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+
+      #secretaryGrid .member-card {
+        padding: 16px 12px;
+      }
+    }
+
     @media(max-width:720px) {
+      #secretaryGrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .leader-row {
         grid-template-columns: 1fr;
         max-width: 360px;
@@ -1303,7 +1312,8 @@
     @media(max-width:560px) {
 
       .member-grid,
-      .member-grid.cols-3 {
+      .member-grid.cols-3,
+      #secretaryGrid {
         grid-template-columns: 1fr;
       }
 
@@ -2763,7 +2773,7 @@
         <div class="eyebrow" style="justify-content:center;">Core Team</div>
         <h2 style="font-size:32px;">Executives</h2>
       </div>
-      <div class="member-grid cols-3 reveal" id="secretaryGrid" style="margin-bottom:20px;"></div>
+      <div class="member-grid reveal" id="secretaryGrid" style="margin-bottom:20px;"></div>
     </div>
   </section>
 
