@@ -1141,13 +1141,13 @@
 
     .leader-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       margin-bottom: 70px;
     }
 
     .leader-card {
-      padding: 34px;
+      padding: 28px 22px;
       text-align: center;
       cursor: pointer;
       transition: transform .45s var(--ease), box-shadow .45s var(--ease);
@@ -1218,6 +1218,12 @@
       left: 50%;
     }
 
+    @media(min-width:1025px) {
+      .member-grid.cols-3> :last-child:nth-child(3n+1) {
+        grid-column: 2;
+      }
+    }
+
     .member-card {
       padding: 24px;
       cursor: pointer;
@@ -1273,7 +1279,24 @@
       }
 
       .leader-row {
+        gap: 16px;
+      }
+
+      .leader-card {
+        padding: 22px 14px;
+      }
+
+      .leader-card .portrait {
+        font-size: 40px;
+      }
+    }
+
+    @media(max-width:720px) {
+      .leader-row {
         grid-template-columns: 1fr;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
@@ -3035,33 +3058,32 @@
         intro: "I've had the privilege of watching ZIMAL grow from a small idea into one of the most active student communities on campus. My role is to guide the leadership team while giving them the room to make their own decisions, that's where real growth happens. I'm proud of how far this society has come and even more excited for what our members will build next."
       },
       president: {
-        name: "Qirrat Fatima", role: "President", dept: "Mechanical Engineering", degree: "BS Mechanical Engineering", initials: "QF", photo: "images/img006.jpg", linkedin: "https://www.linkedin.com/in/qirrat?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-        showInstagram: false,
-        intro: "The one who is appointed over the affairs of the people should begin by teaching himself before teaching others. - Attributed to Imam Ali [RA].As I step into this responsibility, I hope to lead with sincerity, strengthen the bonds that make us one, and dedicate my heart and efforts to a tenure that every member can proudly call their own, In sha' Allah."
+          name: "Hira Barkat", role: "President", dept: "City & Regional Planning", degree: "BS City & Regional Planning",linkedin:"https://www.linkedin.com/in/hira-barkat-a17b01291?utm_source=share_via&utm_content=profile&utm_medium=member_android", photo: "images/img011.jpg", photoPosition: "bottom", showInstagram: false,
+          intro: "I’m someone who enjoys turning ideas into action and bringing people together to make things happen. As a City & Regional Planning student, I’m naturally drawn to understanding how people, spaces, and communities come together and I bring that same mindset into leadership. I enjoy taking on challenges, coordinating teams, and making sure even the smallest ideas have room to grow. As President of ZIMAL, I’m here to lead with purpose, support the people around me, and create an environment where everyone feels confident enough to contribute, create, and take their space."
       },
       vp: {
-        name: "Aleshba Kashif", role: "Vice President", dept: "Mechanical Engineering", degree: "BS Mechanical Engineering", initials: "AK", photo: "images/img007.jpg", linkedin: "https://www.linkedin.com/in/aleshba-kashif-1a6a94255?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        name: "Manahil Malik", role: "Vice President", dept: "Electrical Engineering", degree: "BS Electrical Engineering", initials: "MM", photo: "images/manahil-malik.jpg", photoPosition: "center", linkedin: "https://www.linkedin.com/in/manahilmalik123?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         showInstagram: false,
-        intro: "Alhamdulillah, my journey at UET began with engineering, but along the way, it became so much more than just a degree. I discovered new interests, met some amazing people, and eventually found a community that felt like home. ZIMAL stood out to me because it creates a space where girls can connect, support each other, and grow with confidence. I’m naturally curious, always up for learning something new, and probably have more interests than I have time for! As Vice President, I hope to turn that curiosity into action by creating opportunities, empowering girls to step forward, own their space, and leave their mark."
+        intro: "I’m Manahil Malik, an Electrical Engineering student at UET. I believe that leadership is not just about holding a position, but about embracing responsibility, inspiring others, and creating meaningful change. I value the strength of femininity, the power of collaboration, and the importance of building a space where women feel confident, supported, and empowered to be unapologetically themselves. As Vice President of ZIMAL, I aspire to lead with purpose, serve with sincerity, and contribute to a community where women uplift one another and grow together."
       },
-      secretaries: [
-        {
+      generalSecretary: {
           name: "Freeha Qayyum", photo: "images/img008.jpg", role: "General Secretary", dept: "Computer Science", degree: "BS Computer Science", initials: "FQ", linkedin: "https://www.linkedin.com/in/freeha-qayyum/ ", photoPosition: "top",
           showInstagram: false,
           intro: " If being everywhere at once was a major, I’d be graduating with honors. General Secretary by title, but mostly the one behind the scenes making sure the chaos looks organized usually with a cup of chai in hand. I believe good conversations create great ideas, and when girls support each other, those ideas become unstoppable. I’m here to help build a space where every woman on campus feels backed, confident, and ready to lead. A little obsessed with getting things right, but always leaving room for fun along the way."
+      },
+      secretaries: [
+        {
+          name: "Sushmita Timalsina", photo: "images/img010.jpg", role: "Media Coordinator", dept: "Civil Engineering", degree: "BS Civil Engineering", initials: "ST", linkedin: "https://www.linkedin.com/in/sushmita-timalsina-324108331?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          photoPosition: "bottom", showInstagram: false,
+          intro: "Through my role as Media Coordinator, I aim to amplify the voices of young women in engineering and turn their ideas, achievements, and stories into something people can see and remember. I believe media is more than just content,it is a tool for empowerment, connection, and visibility. From shaping stories to coordinating creative teams, I enjoy bringing people and ideas together to create work that feels meaningful. My goal is to build a space where creativity, inclusivity, and technical excellence coexist, while making sure every voice gets its moment to shine. After all, good stories deserve to be told and great ones deserve to be heard."
         },
         {
           name: "Sara Shahzad", photo: "images/img009.jpg", role: "Finance Secretary", dept: "Environmental Engineering", degree: "BS Environmental Sciences", initials: "SS", linkedin: "https://www.linkedin.com/in/sara-shahzad-7bb619369?utm_source=share_via&utm_content=profile&utm_medium=member_ios", photoPosition: "center", showInstagram: false,
           intro: "My name is Sara Shahzad, an Environmental Science student at UET Lahore and Finance Secretary at Zimal for this tenure. I am committed to transparency, responsible financial management, and effective resource utilization. I actively contribute to Pakistan Youth Parliament, Pakistan Justice and Rights Initiative and I serve as Media Relations Officer at YPDC UET Lahore Chapter, and am a part of the Climate Action Forum. Through Model United Nations (MUNs), particularly UNHCR, I engage with humanitarian and human rights issues. I aim to transform ideas into meaningful initiatives through leadership, collaboration, and dedication."
         },
         {
-          name: "Sushmita Timalsina", photo: "images/img010.jpg", role: "Section Editor", dept: "Civil Engineering", degree: "BS Civil Engineering", initials: "ST", linkedin: "https://www.linkedin.com/in/sushmita-timalsina-324108331?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-          photoPosition: "bottom", showInstagram: false,
-          intro: "Through my role as Section Editor and Media Coordinator, I aim to amplify the voices of young women in engineering and turn their ideas, achievements, and stories into something people can see and remember. I believe media is more than just content,it is a tool for empowerment, connection, and visibility. From shaping stories to coordinating creative teams, I enjoy bringing people and ideas together to create work that feels meaningful. My goal is to build a space where creativity, inclusivity, and technical excellence coexist, while making sure every voice gets its moment to shine. After all, good stories deserve to be told and great ones deserve to be heard."
-        },
-        {
-          name: "Hira Barkat", role: "Director General", dept: "City & Regional Planning", degree: "BS City & Regional Planning",linkedin:"https://www.linkedin.com/in/hira-barkat-a17b01291?utm_source=share_via&utm_content=profile&utm_medium=member_android", photo: "images/img011.jpg", photoPosition: "bottom", showInstagram: false,
-          intro: "I’m someone who enjoys turning ideas into action and bringing people together to make things happen. As a City & Regional Planning student, I’m naturally drawn to understanding how people, spaces, and communities come together and I bring that same mindset into leadership. I enjoy taking on challenges, coordinating teams, and making sure even the smallest ideas have room to grow. As Director General at ZIMAL, I’m here to lead with purpose, support the people around me, and create an environment where everyone feels confident enough to contribute, create, and take their space."
+          name: "Roha Eman", photo: "images/roha-eman.jpg", role: "Director General", dept: "City & Regional Planning", degree: "BS City & Regional Planning", initials: "RE", photoPosition: "center", linkedin: "https://www.linkedin.com/in/roha-eman-49a799290?utm_source=share_via&utm_content=profile&utm_medium=member_android", showInstagram: false,
+          intro: "Roha Eman from the City and Regional Planning Department, Session 2023, serves as Director General at ZIMAL. “Empowered women do not just rise; they light the path for everyone coming after them.” Guided by resilience, empathy, and an unwavering commitment to women’s growth, Roha is here to steer ZIMAL into a vibrant new chapter of unity and fearless ambition."
         },
         {
           name: "Wajiha Sohail", photo: "images/img012.jpg", role: "Event Management Head", dept: "Industrial & Manufacturing Engineering", degree: " BS Industrial & Manufacturing Engineering", initials: "WS", showInstagram: false, linkedin: "https://www.linkedin.com/in/wajiha-sohail-336b2a338?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -3216,7 +3238,7 @@
     /* =========================================================
        HELPERS
        ========================================================= */
-    function initials(name) { return name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase(); }
+    function initials(name) { if (/^to be announced$/i.test(name.trim())) return '?'; return name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase(); }
 
     function portraitDiv(name, photo, photoPosition, photoScale) {
       if (photo) { return `<div class="portrait"><img src="${photo}" alt="${name}" style="width:100%;height:100%;object-fit:cover;object-position:${photoPosition || 'center'};transform:scale(${photoScale || 1});position:relative;z-index:0;"/></div>`; }
@@ -3242,7 +3264,7 @@
       </div>
     </div>`;
 
-      const leaderHtml = [DATA.president, DATA.vp].map(p => `
+      const leaderHtml = [DATA.president, DATA.vp, DATA.generalSecretary].map(p => `
     <div class="glass card-hover leader-card" data-profile='${encodeURIComponent(JSON.stringify(p)).replace(/'/g, '%27')}'>
       ${portraitDiv(p.name, p.photo, p.photoPosition, p.photoScale)}
       <span class="role-tag">${p.role}</span>
