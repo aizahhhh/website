@@ -4687,13 +4687,39 @@
       nextBtn.addEventListener('click', () => dismissTop(1));
 
       layout();
-      /* first deal-in when the section scrolls into view */
-      if (reduce || !('IntersectionObserver' in window)) return;
+
+      /* when every card has been swiped away and the deck scrolls out of view
+         (e.g. the visitor scrolls down), shuffle the cards back so they are
+         dealt in again the next time the deck comes into view */
+      function restock() {
+        cards.forEach(c => { c._out = false; c.classList.remove('gone'); c.style.transform = ''; });
+        layout();
+      }
+
+      if (!('IntersectionObserver' in window)) return;
+
+      if (reduce) {
+        new IntersectionObserver(entries => {
+          if (entries.some(en => !en.isIntersecting) && !live().length) restock();
+        }, { threshold: 0 }).observe(deck);
+        return;
+      }
+
+      let dealt = false;       // first deal-in has happened
+      let needsDeal = false;   // deck was emptied, restocked off screen, waiting to be dealt
       cards.forEach(c => c.style.opacity = '0');
-      const io = new IntersectionObserver(entries => {
-        if (entries.some(en => en.isIntersecting)) { io.disconnect(); deal(true); }
-      }, { threshold: 0.4 });
-      io.observe(deck);
+
+      new IntersectionObserver(entries => {
+        const en = entries[entries.length - 1];
+        if (en.isIntersecting && en.intersectionRatio >= 0.4) {
+          if (!dealt) { dealt = true; deal(true); }
+          else if (needsDeal) { needsDeal = false; deal(false); }
+        } else if (!en.isIntersecting && dealt && !live().length) {
+          restock();
+          cards.forEach(c => c.style.opacity = '0');
+          needsDeal = true;
+        }
+      }, { threshold: [0, 0.4] }).observe(deck);
     })();
   </script>
 </body>
