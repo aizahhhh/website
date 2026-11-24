@@ -4839,7 +4839,10 @@
       }
       const start = performance.now();
       const go = () => setTimeout(endLoad, Math.max(0, 1500 - (performance.now() - start)));
-      if (document.readyState === 'complete') go(); else window.addEventListener('load', go);
+      // only wait for the embedded (base64) logo, not the photos in the images folder
+      const logo = pl.querySelector('img');
+      if (!logo || logo.complete) go();
+      else { logo.addEventListener('load', go, { once: true }); logo.addEventListener('error', go, { once: true }); }
       setTimeout(endLoad, 3500);
     })();
   </script>
