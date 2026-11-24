@@ -1023,6 +1023,218 @@
       font-weight: 600;
     }
 
+
+    /* ============ ABOUT: swipeable card deck ============ */
+    #about .about-grid { max-width: 860px; }
+    #about .about-copy { text-align: center; }
+    #about .eyebrow { justify-content: center; }
+
+    .deck-hint { color: var(--text-dim); font-size: 15px; margin: -6px 0 0; }
+
+    .deck-wrap {
+      margin-top: 34px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .deck {
+      position: relative;
+      width: min(100%, 440px);
+      height: 330px;
+      margin-bottom: 26px;
+      touch-action: pan-y;
+      outline: none;
+    }
+
+    .deck:focus-visible { outline: 2px solid var(--hotpink); outline-offset: 14px; border-radius: 32px; }
+
+    .deck-card {
+      --y: 0px; --s: 1; --r: 0deg; --lift: 0px;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 30px 30px 32px;
+      border-radius: 28px;
+      color: #fff;
+      background: linear-gradient(150deg, var(--c1), var(--c2));
+      box-shadow: 0 26px 44px -20px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      transform: translateY(calc(var(--y) + var(--lift))) scale(var(--s)) rotate(var(--r));
+      transform-origin: 50% 90%;
+      transition: transform .6s cubic-bezier(.34, 1.56, .64, 1), opacity .3s ease;
+      user-select: none;
+      -webkit-user-select: none;
+      will-change: transform;
+      overflow: hidden;
+    }
+
+    .deck-card::before {
+      content: '';
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -70px;
+      top: -90px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.13);
+      pointer-events: none;
+    }
+
+    .deck-card::after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      left: -40px;
+      bottom: -50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .deck-card.is-top { cursor: grab; }
+    .deck-card.is-top:hover { --lift: -8px; }
+    .deck-card.dragging { transition: none; cursor: grabbing; --lift: 0px; }
+    .deck-card.gone { display: none; }
+
+    .deck-ico {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      font-size: 28px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .deck-body { position: relative; z-index: 1; margin-top: auto; }
+
+    .deck-card h3 {
+      font-family: var(--font-display);
+      font-size: clamp(23px, 5.4vw, 28px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .deck-card p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.94);
+      margin: 0;
+    }
+
+    .deck-empty {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 28px;
+      text-align: center;
+      border-radius: 28px;
+      background: linear-gradient(150deg, #e0156f, #6d28d9);
+      box-shadow: 0 26px 44px -20px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(.7) rotate(-6deg);
+      pointer-events: none;
+      transition: opacity .3s ease, transform .7s cubic-bezier(.34, 1.56, .64, 1), visibility 0s linear .7s;
+    }
+
+    .deck.is-empty .deck-empty {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      pointer-events: auto;
+      transition-delay: .3s, .3s, 0s;
+    }
+
+    .deck-empty-ico { font-size: 40px; line-height: 1; }
+
+    .deck-empty p {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 5vw, 26px);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0;
+      max-width: 15em;
+    }
+
+    .join-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font: 800 17px var(--font-display);
+      letter-spacing: 0.08em;
+      color: #5b0f3a;
+      background: #fff;
+      padding: 17px 38px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, .6), 0 16px 30px -12px rgba(0, 0, 0, .6);
+      animation: joinPulse 2.2s ease-out infinite;
+      transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .join-now:hover { transform: scale(1.08) rotate(-2deg); }
+    .join-now:active { transform: scale(.95); }
+    .join-now:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+
+    @keyframes joinPulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .55), 0 16px 30px -12px rgba(0, 0, 0, .6); }
+      70%, 100% { box-shadow: 0 0 0 22px rgba(255, 255, 255, 0), 0 16px 30px -12px rgba(0, 0, 0, .6); }
+    }
+
+    @media (prefers-reduced-motion: reduce) { .join-now { animation: none; } }
+
+    .deck-dots { display: flex; gap: 8px; }
+
+    .deck-dots i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--hotpink);
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1), background .3s ease, opacity .3s ease;
+    }
+
+    .deck-dots i.off { background: var(--text-faint); opacity: .5; transform: scale(.6); }
+
+    .deck-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+    .deck-btn {
+      font: 700 14.5px var(--font-body);
+      border-radius: 999px;
+      padding: 14px 28px;
+      border: 1px solid transparent;
+      color: #fff;
+      transition: transform .25s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease, border-color .25s ease;
+    }
+
+    .deck-btn.primary { background: var(--grad-1); box-shadow: 0 14px 30px -14px rgba(255, 45, 138, 0.8); }
+    .deck-btn.primary:hover { transform: translateY(-2px) scale(1.04); }
+    .deck-btn.primary:active { transform: scale(.96); }
+    .deck-btn.primary[disabled] { opacity: .35; pointer-events: none; }
+    .deck-btn.ghost { background: var(--surface-strong); border-color: var(--border); }
+    .deck-btn.ghost:hover { border-color: var(--hotpink); }
+    .deck-btn[hidden] { display: none; }
+    .deck-btn:focus-visible { outline: 2px solid var(--hotpink); outline-offset: 3px; }
+
+    .deck-status { font-size: 13px; color: var(--text-faint); margin: -10px 0 0; min-height: 1.2em; }
+
+    @media (max-width: 480px) { .deck { height: 360px; } }
+
     /* ============ STATS STRIP (4 premium orbs) ============ */
     .stats-strip {
       position: relative;
@@ -2989,16 +3201,45 @@
           <div class="eyebrow">About ZIMAL</div>
           <h2 style="font-size:clamp(30px,4.5vw,48px); margin-bottom:26px;">More Than a Society.<br><span
               class="grad-text">A Community.</span></h2>
-          <p>ZIMAL UET Women's Society exists to give women at UET Lahore a real platform to lead, create and
-            connect,<strong> not a footnote to campus life, but a home for it.</strong> We build spaces where
-            ambition is normal and collaboration replaces competition.</p>
-          <p>Our purpose is simple: open doors to leadership roles that are too often out of reach, and back
-            that access with mentorship, structure and a genuine community. From organizing flagship events to
-            running creative teams in design, media and documentation, every member gains hands-on experience
-            that extends well past graduation.</p>
-          <p>Our vision is a campus culture where women don't just participate they direct, design and decide.
-            Through seminars, awareness drives, and interactive series, ZIMAL turns everyday student energy into
-            lasting institutional impact.</p>
+          <p class="deck-hint">Swipe a card away, or just tap it.</p>
+          <div class="deck-wrap">
+            <div class="deck" id="aboutDeck" tabindex="0" aria-label="ZIMAL cards. Press Right or Left arrow, or Enter, to dismiss the top card.">
+              <article class="deck-card" style="--c1:#e0156f;--c2:#a21caf" aria-label="Lead, create, connect">
+                <span class="deck-ico" aria-hidden="true">🌸</span>
+                <div class="deck-body"><h3>Lead, create, connect</h3><p>A real platform for women at UET Lahore to step up, make things and find their people.</p></div>
+              </article>
+              <article class="deck-card" style="--c1:#7c3aed;--c2:#4c1d95" aria-label="A home, not a footnote">
+                <span class="deck-ico" aria-hidden="true">🏡</span>
+                <div class="deck-body"><h3>A home, not a footnote</h3><p>Not a footnote to campus life, but a home for it.</p></div>
+              </article>
+              <article class="deck-card" style="--c1:#c026d3;--c2:#6d28d9" aria-label="Collaboration over competition">
+                <span class="deck-ico" aria-hidden="true">🤝</span>
+                <div class="deck-body"><h3>Collaboration over competition</h3><p>Spaces where ambition is normal and working together replaces competing.</p></div>
+              </article>
+              <article class="deck-card" style="--c1:#be185d;--c2:#e0156f" aria-label="Open doors">
+                <span class="deck-ico" aria-hidden="true">🔑</span>
+                <div class="deck-body"><h3>Open doors</h3><p>Leadership roles that are too often out of reach, backed by mentorship, structure and a genuine community.</p></div>
+              </article>
+              <article class="deck-card" style="--c1:#5b21b6;--c2:#3b0764" aria-label="Learn by doing">
+                <span class="deck-ico" aria-hidden="true">🛠️</span>
+                <div class="deck-body"><h3>Learn by doing</h3><p>Organize flagship events or run creative teams in design, media and documentation. The experience lasts well past graduation.</p></div>
+              </article>
+              <article class="deck-card" style="--c1:#e0156f;--c2:#6d28d9" aria-label="Direct, design, decide">
+                <span class="deck-ico" aria-hidden="true">🔭</span>
+                <div class="deck-body"><h3>Direct, design, decide</h3><p>A campus where women don't just participate. Seminars, awareness drives and interactive series turn student energy into lasting impact.</p></div>
+              </article>
+              <div class="deck-empty" id="deckEmpty">
+                <span class="deck-empty-ico" aria-hidden="true">💜</span>
+                <p>Now you know us. Come be part of it.</p>
+                <a href="#join" class="join-now" id="joinNow" tabindex="-1">JOIN NOW <span aria-hidden="true">✦</span></a>
+              </div>
+            </div>
+            <div class="deck-dots" id="deckDots" aria-hidden="true"></div>
+            <div class="deck-actions">
+              <button type="button" class="deck-btn primary" id="deckNext">Next card</button>
+            </div>
+            <p class="deck-status" id="deckStatus" aria-live="polite"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -4308,6 +4549,152 @@
       });
       obs.observe(m, { attributes: true, attributeFilter: ['class'] });
     });
+
+    /* =========================================================
+       ABOUT: swipeable card deck
+       ========================================================= */
+    (function () {
+      const deck = document.getElementById('aboutDeck');
+      if (!deck) return;
+      const cards = [...deck.querySelectorAll('.deck-card')];
+      const total = cards.length;
+      const dotsEl = document.getElementById('deckDots');
+      const nextBtn = document.getElementById('deckNext');
+      const joinBtn = document.getElementById('joinNow');
+      const status = document.getElementById('deckStatus');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const SPRING = 'cubic-bezier(.34,1.56,.64,1)';
+      const TILT = [0, -3.5, 3, -2];
+
+      const dots = cards.map(() => { const d = document.createElement('i'); dotsEl.appendChild(d); return d; });
+      const live = () => cards.filter(c => !c._out);
+
+      function layout() {
+        const L = live();
+        L.forEach((c, i) => {
+          const v = Math.min(i, 3);
+          c.style.setProperty('--y', v * 14 + 'px');
+          c.style.setProperty('--s', String(1 - v * 0.05));
+          c.style.setProperty('--r', TILT[v] + 'deg');
+          c.style.zIndex = String(total - i);
+          c.style.opacity = i < 4 ? '1' : '0';
+          c.classList.toggle('is-top', i === 0);
+          c.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
+        });
+        cards.forEach((c, i) => dots[i].classList.toggle('off', !!c._out));
+        deck.classList.toggle('is-empty', L.length === 0);
+        nextBtn.disabled = L.length === 0;
+        nextBtn.hidden = L.length === 0;
+        joinBtn.tabIndex = L.length === 0 ? 0 : -1;
+        status.textContent = L.length === 0 ? '' : (L.length + (L.length === 1 ? ' card left' : ' cards left'));
+      }
+
+      function fly(card, ux, uy, startX, startY, startRot) {
+        if (card._out) return;
+        card._out = true;
+        card.classList.remove('is-top');
+        card.style.zIndex = '100';
+        layout();                       // next cards spring forward right away
+        const done = () => { card.classList.add('gone'); card.style.transform = ''; if (reduce && !live().length) joinBtn.focus({ preventScroll: true }); };
+        if (reduce) { done(); return; }
+        const far = Math.max(window.innerWidth, 700);
+        const fx = ux * far, fy = uy * far * 0.6, fr = ux * 32 + startRot;
+        const anim = card.animate([
+          { transform: 'translate(' + startX + 'px,' + startY + 'px) rotate(' + startRot + 'deg) scale(1)' },
+          { transform: 'translate(' + (startX - ux * 16) + 'px,' + (startY - uy * 10) + 'px) rotate(' + (startRot - ux * 3) + 'deg) scale(1.04)', offset: 0.18 },
+          { transform: 'translate(' + fx + 'px,' + fy + 'px) rotate(' + fr + 'deg) scale(.9)', opacity: 0.9 }
+        ], { duration: 620, easing: 'cubic-bezier(.5,0,.75,.4)', fill: 'forwards' });
+        anim.onfinish = () => { anim.cancel(); done(); if (!live().length) joinBtn.focus({ preventScroll: true }); };
+      }
+
+      function dismissTop(dir) {
+        const top = live()[0];
+        if (!top) return;
+        const d = dir || (Math.random() < 0.5 ? 1 : -1);
+        fly(top, d, -0.25, 0, 0, 0);
+      }
+
+      function deal(withHint) {
+        cards.forEach(c => { c._out = false; c.classList.remove('gone'); c.style.transform = ''; });
+        layout();
+        if (reduce) return;
+        cards.forEach((c, i) => {
+          const side = i % 2 ? 1 : -1;
+          c.animate(
+            [{ transform: 'translate(' + side * 320 + 'px,-160px) rotate(' + side * 38 + 'deg) scale(.9)', opacity: 0 }],
+            { duration: 760, delay: (total - 1 - i) * 110, easing: SPRING, fill: 'backwards' }
+          );
+        });
+        if (withHint) {
+          const top = cards[0];
+          setTimeout(() => {
+            if (top._out || top.classList.contains('dragging')) return;
+            top.animate([
+              { transform: 'translateX(0) rotate(0deg)' },
+              { transform: 'translateX(34px) rotate(4deg)', offset: .35 },
+              { transform: 'translateX(-18px) rotate(-2.5deg)', offset: .7 },
+              { transform: 'translateX(0) rotate(0deg)' }
+            ], { duration: 900, easing: 'ease-in-out' });
+          }, total * 110 + 900);
+        }
+      }
+
+      /* drag / swipe / tap */
+      let drag = null;
+      deck.addEventListener('pointerdown', e => {
+        const top = live()[0];
+        if (!top || (e.pointerType === 'mouse' && e.button !== 0)) return;
+        drag = { card: top, id: e.pointerId, x0: e.clientX, y0: e.clientY, dx: 0, dy: 0, t: performance.now(), vx: 0, moved: false, next: live()[1] };
+      });
+      deck.addEventListener('pointermove', e => {
+        if (!drag || e.pointerId !== drag.id) return;
+        const dx = e.clientX - drag.x0, dy = e.clientY - drag.y0;
+        const now = performance.now();
+        drag.vx = (e.clientX - (drag.lx ?? e.clientX)) / Math.max(1, now - (drag.lt ?? now));
+        drag.lx = e.clientX; drag.lt = now;
+        if (!drag.moved && Math.hypot(dx, dy) < 6) return;
+        if (!drag.moved) { drag.moved = true; drag.card.classList.add('dragging'); deck.setPointerCapture(drag.id); if (drag.next) drag.next.style.transition = 'none'; }
+        drag.dx = dx; drag.dy = dy;
+        drag.card.style.transform = 'translate(' + dx + 'px,' + dy * 0.6 + 'px) rotate(' + dx / 14 + 'deg)';
+        if (drag.next) {
+          const p = Math.min(Math.hypot(dx, dy) / 160, 1);
+          drag.next.style.transform = 'translateY(' + 14 * (1 - p) + 'px) scale(' + (0.95 + 0.05 * p) + ') rotate(' + TILT[1] * (1 - p) + 'deg)';
+        }
+      });
+      function endDrag(e) {
+        if (!drag || e.pointerId !== drag.id) return;
+        const d = drag; drag = null;
+        if (d.next) { d.next.style.transition = ''; d.next.style.transform = ''; }
+        if (!d.moved) { dismissTop(d.x0 > deck.getBoundingClientRect().left + deck.offsetWidth / 2 ? 1 : -1); return; }
+        d.card.classList.remove('dragging');
+        const dist = Math.hypot(d.dx, d.dy);
+        if (dist > 110 || (Math.abs(d.vx) > 0.6 && dist > 40)) {
+          const len = dist || 1;
+          fly(d.card, d.dx / len, d.dy / len, d.dx, d.dy * 0.6, d.dx / 14);
+        } else {
+          void d.card.offsetWidth;        // so the spring-back transition runs
+          d.card.style.transform = '';
+        }
+      }
+      deck.addEventListener('pointerup', endDrag);
+      deck.addEventListener('pointercancel', endDrag);
+
+      deck.addEventListener('keydown', e => {
+        if (e.target.closest('.join-now')) return;
+        if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ' || e.key === 'Delete') { e.preventDefault(); dismissTop(1); }
+        else if (e.key === 'ArrowLeft' || e.key === 'Backspace' || e.key === 'Escape') { e.preventDefault(); dismissTop(-1); }
+      });
+      nextBtn.addEventListener('click', () => dismissTop(1));
+
+      layout();
+      /* first deal-in when the section scrolls into view */
+      if (reduce || !('IntersectionObserver' in window)) return;
+      cards.forEach(c => c.style.opacity = '0');
+      const io = new IntersectionObserver(entries => {
+        if (entries.some(en => en.isIntersecting)) { io.disconnect(); deal(true); }
+      }, { threshold: 0.4 });
+      io.observe(deck);
+    })();
   </script>
 </body>
 
