@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Courier+Prime:wght@400;700&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -692,55 +692,168 @@
     /* ============ HERO ============ */
     .hero {
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 140px 24px 60px;
+      padding: 120px 24px 90px;
       position: relative;
+      overflow: hidden;
+      isolation: isolate;
     }
 
-    .hero-badge {
-      font-family: var(--font-display);
-      font-size: 12.5px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 9px 20px;
-      border-radius: 100px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--lavender);
-      margin-bottom: 34px;
-      backdrop-filter: blur(8px);
+    .hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      will-change: transform;
+      -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
     }
 
-    .hero h1 {
-      font-size: clamp(48px, 9vw, 112px);
-      line-height: 0.98;
-      margin-bottom: 26px;
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      will-change: transform, opacity;
     }
 
-    .hero h1 span {
+    .hero .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .hero h1.hero-title {
+      font-size: clamp(84px, min(26vw, 42vh), 380px);
+      font-weight: 700;
+      line-height: 0.82;
+      letter-spacing: -0.045em;
+      margin: 0;
+    }
+
+    .hero-word {
+      display: inline-flex;
+      justify-content: center;
+      transform: perspective(1100px) rotateY(calc(var(--tx, 0) * 9deg)) rotateX(calc(var(--ty, 0) * -7deg));
+    }
+
+    .hero-glow {
+      position: absolute;
+      left: 50%;
+      top: 46%;
+      width: min(95vw, 1100px);
+      height: min(60vw, 620px);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(closest-side, rgba(255, 45, 138, 0.16), transparent 70%),
+        radial-gradient(closest-side at 70% 55%, rgba(139, 92, 246, 0.14), transparent 72%);
+      filter: blur(40px);
+      animation: hzPulse 6s ease-in-out infinite;
+    }
+
+    @keyframes hzPulse {
+
+      0%,
+      100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(0.95);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+    }
+
+    .hc {
+      display: inline-block;
+      transform: translateY(calc(var(--f, 0) * -0.045em)) scale(calc(1 + var(--f, 0) * 0.05));
+      filter: drop-shadow(0 0 calc(var(--f, 0) * 14px) rgba(255, 45, 138, 0.3));
+    }
+
+    .hl {
       display: block;
+      overflow: hidden;
+      padding: 0.08em 0.03em 0.16em;
+      margin: -0.08em -0.03em -0.16em;
     }
 
-    .hero-tagline {
-      font-family: var(--font-display);
-      font-size: clamp(16px, 2vw, 21px);
-      color: var(--text-dim);
-      font-weight: 500;
-      margin-bottom: 20px;
-      letter-spacing: 0.01em;
+    .hl i {
+      display: block;
+      font-style: normal;
+      transform: translateY(118%) rotate(7deg);
+      transform-origin: 0 100%;
+      background: linear-gradient(100deg, #ff2d8a, #d946ef 28%, #8b5cf6 50%, #d946ef 72%, #ff2d8a);
+      background-size: calc(var(--ww, 700px) * 2) 100%;
+      background-position: calc(var(--lx, 0px) * -1) 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation:
+        hzRise 1.25s var(--ease) forwards,
+        hzSheen 9s linear infinite;
+      animation-delay: calc(0.2s + var(--i) * 0.09s), 0s;
     }
 
-    .hero p.intro {
-      max-width: 640px;
-      color: var(--text-dim);
-      font-size: 16.5px;
-      line-height: 1.75;
-      margin-bottom: 44px;
+    .hero-sub {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: clamp(22px, 3.2vw, 40px);
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-style: normal;
       font-weight: 400;
+      letter-spacing: 0.04em;
+      font-size: clamp(14px, 1.9vw, 24px);
+      line-height: 1;
+      color: #f3cdea;
+    }
+
+    .hs-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 0.28em;
+    }
+
+    .hs-word {
+      display: inline-flex;
+    }
+
+    .hs-word i {
+      position: relative;
+      display: inline-block;
+      font-style: normal;
+      opacity: 0;
+      animation: hzType 0.01s steps(1) forwards;
+      animation-delay: calc(0.35s + var(--i) * 0.07s);
+      text-shadow: 0 0 28px rgba(217, 70, 239, 0.35);
+    }
+
+    @keyframes hzType {
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .hero *,
+      .hero-cue {
+        animation-delay: 0s !important;
+      }
     }
 
     .hero-ctas {
@@ -748,7 +861,88 @@
       gap: 18px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-bottom: 70px;
+      margin-top: clamp(28px, 4vw, 46px);
+      opacity: 0;
+      animation: hzFade 1s var(--ease) 1.8s forwards;
+    }
+
+    .hero-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 26px;
+      z-index: 3;
+      width: 1px;
+      height: 54px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.18), transparent);
+      opacity: 0;
+      animation: hzFade 1s ease 2.2s forwards;
+    }
+
+    .hero-cue::after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--hotpink);
+      box-shadow: 0 0 12px var(--pink);
+      animation: hzDrop 2.4s var(--ease) infinite;
+    }
+
+    @keyframes hzRise {
+      to {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    @keyframes hzFade {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes hzSheen {
+      from {
+        background-position: calc(var(--lx, 0px) * -1) 0;
+      }
+
+      to {
+        background-position: calc(var(--lx, 0px) * -1 - var(--ww, 700px) * 2) 0;
+      }
+    }
+
+    @keyframes hzDrop {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+
+      25% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(52px);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero-cue {
+        display: none;
+      }
     }
 
     .reveal {
@@ -810,9 +1004,11 @@
     /* ============ ABOUT ============ */
     .about-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr;
       gap: 70px;
       align-items: start;
+      max-width: 860px;
+      margin: 0 auto;
     }
 
     .about-copy p {
@@ -827,11 +1023,18 @@
       font-weight: 600;
     }
 
+    /* ============ STATS STRIP (4 premium orbs) ============ */
+    .stats-strip {
+      position: relative;
+      padding: 90px 0 10px;
+    }
+
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      padding: 14px 0;
+      gap: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
     }
 
     .stat-orb-wrap {
@@ -839,155 +1042,180 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      animation: orbFloat 4.6s ease-in-out infinite;
+      gap: 30px;
+      animation: orbFloat 6s ease-in-out infinite;
     }
 
-    .stat-orb-wrap:nth-child(2) {
-      animation-delay: .3s;
-    }
-
-    .stat-orb-wrap:nth-child(3) {
-      animation-delay: .6s;
-    }
-
-    .stat-orb-wrap:nth-child(4) {
-      animation-delay: .9s;
-    }
+    .stat-orb-wrap:nth-child(2) { animation-delay: .5s; }
+    .stat-orb-wrap:nth-child(3) { animation-delay: 1s; }
+    .stat-orb-wrap:nth-child(4) { animation-delay: 1.5s; }
 
     @keyframes orbFloat {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-7px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
     }
 
     .stat-orb {
       position: relative;
-      width: 150px;
-      height: 150px;
+      width: min(100%, 210px);
+      aspect-ratio: 1;
+      transition: transform .6s var(--ease);
     }
 
+    /* glass disc */
     .stat-orb::before {
       content: '';
       position: absolute;
-      inset: 8px;
+      inset: 11%;
       border-radius: 50%;
-      background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.05), rgba(10, 8, 14, 0.55) 70%);
-      backdrop-filter: blur(6px);
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      background:
+        radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.13), transparent 46%),
+        radial-gradient(circle at 70% 85%, rgba(139, 92, 246, 0.22), transparent 60%),
+        radial-gradient(circle, rgba(22, 14, 30, 0.92), rgba(8, 6, 12, 0.96));
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        inset 0 -18px 40px rgba(139, 92, 246, 0.12),
+        0 24px 60px -18px rgba(255, 45, 138, 0.35);
+      backdrop-filter: blur(10px);
     }
 
+    /* soft halo */
     .stat-orb::after {
       content: '';
       position: absolute;
-      inset: -18px;
+      inset: -14%;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 45, 138, 0.28), rgba(139, 92, 246, 0.14) 55%, transparent 75%);
-      filter: blur(14px);
+      background: radial-gradient(circle, rgba(255, 45, 138, 0.26), rgba(139, 92, 246, 0.14) 52%, transparent 72%);
+      filter: blur(22px);
       opacity: 0.55;
-      animation: haloPulse 3.6s ease-in-out infinite;
+      z-index: -1;
+      animation: haloPulse 5s ease-in-out infinite;
       pointer-events: none;
     }
 
     @keyframes haloPulse {
-
-      0%,
-      100% {
-        opacity: 0.4;
-        transform: scale(0.94);
-      }
-
-      50% {
-        opacity: 0.75;
-        transform: scale(1.06);
-      }
+      0%, 100% { opacity: 0.4; transform: scale(0.95); }
+      50% { opacity: 0.85; transform: scale(1.07); }
     }
 
     .stat-orb svg {
-      position: relative;
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
+      overflow: visible;
+    }
+
+    .stat-orb svg.ring {
       transform: rotate(-90deg);
       z-index: 1;
-      overflow: visible;
     }
 
     .stat-orb .ring-track {
       fill: none;
-      stroke: rgba(255, 255, 255, 0.06);
-      stroke-width: 2.5;
+      stroke: rgba(255, 255, 255, 0.07);
+      stroke-width: 1.6;
     }
 
     .stat-orb .ring-fill {
       fill: none;
       stroke: url(#statRingGrad);
-      stroke-width: 3;
+      stroke-width: 2.6;
       stroke-linecap: round;
-      filter: drop-shadow(0 0 7px rgba(255, 45, 138, 0.85)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
-      transition: stroke-dashoffset 1.8s cubic-bezier(.16, .84, .44, 1);
+      filter: drop-shadow(0 0 6px rgba(255, 45, 138, 0.8));
+      transition: stroke-dashoffset 2.2s cubic-bezier(.16, .84, .44, 1);
+    }
+
+    /* slowly turning fine-dotted outer ring */
+    .stat-orb svg.dots {
+      animation: orbSpin 60s linear infinite;
+      z-index: 0;
+    }
+
+    .stat-orb svg.dots circle {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.28);
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-dasharray: 0.1 6.1;
+    }
+
+    /* orbiting light */
+    .orb-spin {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      animation: orbSpin 9s linear infinite;
+      pointer-events: none;
+    }
+
+    .stat-orb-wrap:nth-child(2) .orb-spin { animation-duration: 11s; animation-direction: reverse; }
+    .stat-orb-wrap:nth-child(3) .orb-spin { animation-duration: 13s; }
+    .stat-orb-wrap:nth-child(4) .orb-spin { animation-duration: 10s; animation-direction: reverse; }
+
+    .orb-spin i {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 7px;
+      height: 7px;
+      margin: -3.5px 0 0 -3.5px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 10px 2px rgba(255, 90, 170, 0.95), 0 0 26px 6px rgba(139, 92, 246, 0.6);
+    }
+
+    @keyframes orbSpin {
+      to { transform: rotate(360deg); }
     }
 
     .stat-content {
       position: absolute;
       inset: 0;
-      z-index: 2;
+      z-index: 3;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 5px;
     }
 
     .stat-num {
       font-family: var(--font-display);
-      font-size: 34px;
-      font-weight: 700;
+      font-size: clamp(40px, 4.6vw, 62px);
+      font-weight: 500;
+      letter-spacing: -0.03em;
       line-height: 1;
-      color: var(--text);
-      text-shadow: 0 0 22px rgba(255, 45, 138, 0.35);
+      background: linear-gradient(180deg, #fff 30%, #f3b6dd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      filter: drop-shadow(0 0 18px rgba(255, 45, 138, 0.35));
     }
 
     .stat-label {
-      color: var(--text-dim);
-      font-size: 10.5px;
+      color: #d9c6d8;
+      font-size: 11.5px;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-weight: 700;
+      letter-spacing: 0.34em;
+      margin-right: -0.34em;
+      text-align: center;
     }
 
-    .stat-orb-wrap:hover .stat-orb::after {
-      opacity: 0.9;
-      transform: scale(1.14);
+    .stat-orb-wrap:hover .stat-orb { transform: scale(1.05); }
+    .stat-orb-wrap:hover .stat-orb::after { opacity: 0.95; }
+    .stat-orb-wrap:hover .ring-fill { filter: drop-shadow(0 0 10px rgba(255, 45, 138, 1)); }
+
+    @media (max-width:700px) {
+      .stats-strip { padding-top: 60px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 44px 12px; }
+      .stat-orb { width: min(100%, 150px); }
+      .stat-orb-wrap { gap: 22px; }
+      .stat-label { font-size: 10px; letter-spacing: 0.26em; margin-right: -0.26em; }
     }
 
-    .stat-orb-wrap:hover .ring-fill {
-      filter: drop-shadow(0 0 11px rgba(255, 45, 138, 1)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
-    }
-
-    @media (max-width:640px) {
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 18px 8px;
-      }
-
-      .stat-orb {
-        width: 118px;
-        height: 118px;
-      }
-
-      .stat-num {
-        font-size: 26px;
-      }
-
-      .stat-label {
-        font-size: 9px;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      .stat-orb-wrap, .orb-spin, .stat-orb svg.dots, .stat-orb::after { animation: none; }
     }
 
     @media(max-width:900px) {
@@ -2656,20 +2884,100 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
-    <div class="hero-badge">UET Lahore · Est. Women-Led Society</div>
-    <h1 class="reveal" id="heroTitle">
-      <span class="grad-text">ZIMAL UET</span>
-      <span>Women's Society</span>
-    </h1>
-    <div class="hero-tagline reveal">Empowering Women. Creating Impact. Building the Future</div>
-    <p class="intro reveal">
-      ZIMAL is a women-focused university society at UET Lahore dedicated to leadership, creativity,
-      collaboration and personal growth. A community where students design events, lead teams,
-      and build the confidence to shape meaningful social impact on and beyond campus.
-    </p>
-    <div class="hero-ctas reveal">
-      <a href="#about" class="btn btn-primary">Explore ZIMAL <span class="arrow">→</span></a>
-      <a href="#join" class="btn btn-ghost">Join the Society</a>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-content" id="heroContent">
+      <h1 class="hero-title" id="heroTitle">
+        <span class="sr-only">ZIMAL UET Women's Society</span>
+        <span class="hero-word" aria-hidden="true">
+          <span class="hc"><span class="hl"><i style="--i:0">Z</i></span></span>
+          <span class="hc"><span class="hl"><i style="--i:1">I</i></span></span>
+          <span class="hc"><span class="hl"><i style="--i:2">M</i></span></span>
+          <span class="hc"><span class="hl"><i style="--i:3">A</i></span></span>
+          <span class="hc"><span class="hl"><i style="--i:4">L</i></span></span>
+        </span>
+      </h1>
+      <div class="hero-sub">
+        <span class="sr-only">Empowering Women.</span>
+        <div class="hs-line" aria-hidden="true"><span class="hs-word"><i style="--i:0">E</i><i style="--i:1">m</i><i style="--i:2">p</i><i style="--i:3">o</i><i style="--i:4">w</i><i style="--i:5">e</i><i style="--i:6">r</i><i style="--i:7">i</i><i style="--i:8">n</i><i style="--i:9">g</i></span><span class="hs-word"><i style="--i:11">W</i><i style="--i:12">o</i><i style="--i:13">m</i><i style="--i:14">e</i><i style="--i:15">n</i><i style="--i:16">.</i></span></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#about" class="btn btn-primary">Explore ZIMAL <span class="arrow">→</span></a>
+        <a href="#join" class="btn btn-ghost">Join the Society</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+          <defs>
+            <linearGradient id="statRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff2d8a" />
+              <stop offset="55%" stop-color="#d946ef" />
+              <stop offset="100%" stop-color="#8b5cf6" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="stat-orb-wrap">
+          <div class="stat-orb">
+            <svg class="dots" viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="73.5"></circle></svg>
+            <svg class="ring" viewBox="0 0 150 150" aria-hidden="true">
+              <circle class="ring-track" cx="75" cy="75" r="66"></circle>
+              <circle class="ring-fill" cx="75" cy="75" r="66" data-pct="82"></circle>
+            </svg>
+            <div class="orb-spin" aria-hidden="true"><i></i></div>
+            <div class="stat-content">
+              <div class="stat-num" data-count="25" data-suffix="+">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Members</div>
+        </div>
+        <div class="stat-orb-wrap">
+          <div class="stat-orb">
+            <svg class="dots" viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="73.5"></circle></svg>
+            <svg class="ring" viewBox="0 0 150 150" aria-hidden="true">
+              <circle class="ring-track" cx="75" cy="75" r="66"></circle>
+              <circle class="ring-fill" cx="75" cy="75" r="66" data-pct="64"></circle>
+            </svg>
+            <div class="orb-spin" aria-hidden="true"><i></i></div>
+            <div class="stat-content">
+              <div class="stat-num" data-count="4" data-suffix="+">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Events</div>
+        </div>
+        <div class="stat-orb-wrap">
+          <div class="stat-orb">
+            <svg class="dots" viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="73.5"></circle></svg>
+            <svg class="ring" viewBox="0 0 150 150" aria-hidden="true">
+              <circle class="ring-track" cx="75" cy="75" r="66"></circle>
+              <circle class="ring-fill" cx="75" cy="75" r="66" data-pct="91"></circle>
+            </svg>
+            <div class="orb-spin" aria-hidden="true"><i></i></div>
+            <div class="stat-content">
+              <div class="stat-num" data-count="7">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Teams</div>
+        </div>
+        <div class="stat-orb-wrap">
+          <div class="stat-orb">
+            <svg class="dots" viewBox="0 0 150 150" aria-hidden="true"><circle cx="75" cy="75" r="73.5"></circle></svg>
+            <svg class="ring" viewBox="0 0 150 150" aria-hidden="true">
+              <circle class="ring-track" cx="75" cy="75" r="66"></circle>
+              <circle class="ring-fill" cx="75" cy="75" r="66" data-pct="73"></circle>
+            </svg>
+            <div class="orb-spin" aria-hidden="true"><i></i></div>
+            <div class="stat-content">
+              <div class="stat-num" data-count="15" data-suffix="+">0</div>
+            </div>
+          </div>
+          <div class="stat-label">Collabs</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2691,67 +2999,6 @@
           <p>Our vision is a campus culture where women don't just participate they direct, design and decide.
             Through seminars, awareness drives, and interactive series, ZIMAL turns everyday student energy into
             lasting institutional impact.</p>
-        </div>
-        <div class="reveal">
-          <div class="stats-grid">
-            <svg width="0" height="0" style="position:absolute">
-              <defs>
-                <linearGradient id="statRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ff2d8a" />
-                  <stop offset="55%" stop-color="#d946ef" />
-                  <stop offset="100%" stop-color="#8b5cf6" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <div class="stat-orb-wrap">
-              <div class="stat-orb">
-                <svg viewBox="0 0 150 150">
-                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
-                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="82"></circle>
-                </svg>
-                <div class="stat-content">
-                  <div class="stat-num" data-count="25" data-suffix="+">0</div>
-                  <div class="stat-label">Members</div>
-                </div>
-              </div>
-            </div>
-            <div class="stat-orb-wrap">
-              <div class="stat-orb">
-                <svg viewBox="0 0 150 150">
-                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
-                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="64"></circle>
-                </svg>
-                <div class="stat-content">
-                  <div class="stat-num" data-count="4" data-suffix="+">0</div>
-                  <div class="stat-label">Events</div>
-                </div>
-              </div>
-            </div>
-            <div class="stat-orb-wrap">
-              <div class="stat-orb">
-                <svg viewBox="0 0 150 150">
-                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
-                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="91"></circle>
-                </svg>
-                <div class="stat-content">
-                  <div class="stat-num" data-count="7">0</div>
-                  <div class="stat-label">Teams</div>
-                </div>
-              </div>
-            </div>
-            <div class="stat-orb-wrap">
-              <div class="stat-orb">
-                <svg viewBox="0 0 150 150">
-                  <circle class="ring-track" cx="75" cy="75" r="68"></circle>
-                  <circle class="ring-fill" cx="75" cy="75" r="68" data-pct="73"></circle>
-                </svg>
-                <div class="stat-content">
-                  <div class="stat-num" data-count="15" data-suffix="+">0</div>
-                  <div class="stat-label">Collabs</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -3522,6 +3769,183 @@
     /* safety net: guarantee every section is visible even if scroll events are missed */
     setTimeout(revealCheck, 400);
     setTimeout(() => { document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')); }, 3000);
+
+    /* =========================================================
+       HERO: silk ribbons + kinetic wordmark
+       ========================================================= */
+    (function () {
+      const hero = document.getElementById('home');
+      const cv = document.getElementById('heroCanvas');
+      const content = document.getElementById('heroContent');
+      const cells = Array.from(document.querySelectorAll('#heroTitle .hc'));
+      const word = document.querySelector('#heroTitle .hero-word');
+      if (!hero || !cv || !word) return;
+      const ctx = cv.getContext('2d');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let W = 0, H = 0, dpr = 1, grad = null;
+      let raf = 0, running = false, visible = true;
+      const t0 = performance.now();
+      const mouse = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5, active: 0, target: 0, last: -9999 };
+      const cur = cells.map(() => 0);
+      const tgt = cells.map(() => 0);
+
+      const bundles = [
+        { y: 0.50, amp: 0.17, f: 1.15, sp: 0.26, ph: 0.0, n: 52 },
+        { y: 0.58, amp: 0.13, f: 1.65, sp: -0.2, ph: 2.1, n: 42 },
+        { y: 0.43, amp: 0.11, f: 0.85, sp: 0.17, ph: 4.2, n: 34 }
+      ];
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+        const r = hero.getBoundingClientRect();
+        W = r.width; H = r.height;
+        cv.width = Math.round(W * dpr);
+        cv.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        grad = ctx.createLinearGradient(0, 0, W, 0);
+        grad.addColorStop(0, 'rgb(255,45,138)');
+        grad.addColorStop(0.5, 'rgb(217,70,239)');
+        grad.addColorStop(1, 'rgb(139,92,246)');
+        measureWord();
+        if (reduce) draw(3);
+      }
+
+      function measureWord() {
+        const ww = word.offsetWidth;
+        cells.forEach(c => {
+          const i = c.querySelector('i');
+          i.style.setProperty('--ww', ww + 'px');
+          i.style.setProperty('--lx', c.offsetLeft + 'px');
+        });
+      }
+
+      const TAU = Math.PI * 2;
+      const SIG2 = 2 * 200 * 200;
+
+      function yAt(B, k, x, t) {
+        const nx = Math.min(x / W, 1);
+        const env = Math.pow(Math.sin(Math.PI * nx), 0.9);
+        const wave =
+          Math.sin(nx * B.f * TAU + t * B.sp + B.ph + k * 1.9) * B.amp * H +
+          Math.sin(nx * B.f * 2.1 * TAU - t * B.sp * 1.3 + B.ph + k * 0.8) * B.amp * 0.35 * H;
+        let y = B.y * H + (wave + (k - 0.5) * B.amp * H * 1.1) * env;
+        const dx = x - mouse.x * W;
+        const m = Math.exp(-(dx * dx) / SIG2) * mouse.active;
+        return y + (mouse.y * H - y) * 0.24 * m * env;
+      }
+
+      function trace(B, k, t, step) {
+        ctx.beginPath();
+        for (let x = 0; x <= W + step; x += step) {
+          const y = yAt(B, k, x, t);
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      function draw(t) {
+        ctx.clearRect(0, 0, W, H);
+        ctx.globalCompositeOperation = 'lighter';
+        ctx.strokeStyle = grad;
+        const step = Math.max(6, W / 150);
+
+        /* soft body of light */
+        ctx.lineWidth = 20; ctx.globalAlpha = 0.018;
+        for (let b = 0; b < bundles.length; b++) {
+          trace(bundles[b], 0.2, t, step * 2);
+          trace(bundles[b], 0.5, t, step * 2);
+          trace(bundles[b], 0.8, t, step * 2);
+        }
+
+        /* silk threads */
+        ctx.lineWidth = 1; ctx.globalAlpha = 0.075;
+        for (let b = 0; b < bundles.length; b++) {
+          const B = bundles[b];
+          for (let i = 0; i < B.n; i++) trace(B, i / (B.n - 1), t, step);
+        }
+
+        ctx.globalAlpha = 1;
+        ctx.globalCompositeOperation = 'source-over';
+      }
+
+      function updateLetters(t, now) {
+        const idle = reduce || (now - mouse.last > 2500);
+        if (idle) {
+          for (let i = 0; i < cells.length; i++) {
+            const w = Math.sin(t * 1.15 - i * 0.95);
+            tgt[i] = Math.max(0, w) * 0.5;
+          }
+        }
+        for (let i = 0; i < cells.length; i++) {
+          cur[i] += (tgt[i] - cur[i]) * 0.09;
+          cells[i].style.setProperty('--f', cur[i].toFixed(3));
+        }
+      }
+
+      function frame(now) {
+        const t = (now - t0) / 1000;
+        mouse.x += (mouse.tx - mouse.x) * 0.06;
+        mouse.y += (mouse.ty - mouse.y) * 0.06;
+        mouse.active += (mouse.target - mouse.active) * 0.06;
+        draw(t);
+        updateLetters(t, now);
+        word.style.setProperty('--tx', ((mouse.x - 0.5) * 2 * mouse.active).toFixed(3));
+        word.style.setProperty('--ty', ((mouse.y - 0.5) * 2 * mouse.active).toFixed(3));
+        raf = requestAnimationFrame(frame);
+      }
+
+      function start() {
+        if (reduce || running || !visible || document.hidden) return;
+        running = true; raf = requestAnimationFrame(frame);
+      }
+      function stop() { running = false; cancelAnimationFrame(raf); }
+
+      hero.addEventListener('pointermove', e => {
+        const r = hero.getBoundingClientRect();
+        mouse.tx = (e.clientX - r.left) / r.width;
+        mouse.ty = (e.clientY - r.top) / r.height;
+        mouse.target = 1;
+        mouse.last = performance.now();
+        const R = Math.max(220, window.innerWidth * 0.2);
+        cells.forEach((c, i) => {
+          const b = c.getBoundingClientRect();
+          const d = Math.hypot(e.clientX - (b.left + b.width / 2), (e.clientY - (b.top + b.height / 2)) * 0.55);
+          tgt[i] = Math.max(0, 1 - d / R);
+        });
+      }, { passive: true });
+      hero.addEventListener('pointerleave', () => { mouse.target = 0; mouse.last = -9999; });
+
+      new IntersectionObserver(es => {
+        visible = es[0].isIntersecting;
+        visible ? start() : stop();
+      }, { threshold: 0 }).observe(hero);
+      document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+
+      if (!reduce) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (ticking) return; ticking = true;
+          requestAnimationFrame(() => {
+            const y = window.scrollY, vh = window.innerHeight;
+            if (y < vh * 1.2) {
+              const p = Math.min(1, y / (vh * 0.8));
+              content.style.transform = 'translateY(' + (y * 0.22).toFixed(1) + 'px)';
+              content.style.opacity = (1 - p * 0.9).toFixed(3);
+              cv.style.transform = 'translateY(' + (y * 0.12).toFixed(1) + 'px)';
+            }
+            ticking = false;
+          });
+        }, { passive: true });
+      }
+
+      let rt;
+      window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(resize, 120); });
+      resize();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureWord);
+      window.addEventListener('load', measureWord);
+      if (reduce) draw(3); else start();
+    })();
 
     /* hero word-by-word reveal */
     window.addEventListener('load', () => {
